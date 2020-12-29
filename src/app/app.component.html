@@ -5,7 +5,7 @@
 </div>
 <p>Arrivée des lots de céréales</p>
 <div>
-  <table>
+  <!--<table>
     <tr>
         <td>Numlot</td>
         <td>Type</td>
@@ -22,5 +22,6 @@
         <td> {{lot.qualite}} </td>
         <td> {{lot.origine}}</td>
     </tr>
- </table>
+ </table>-->
+ <app-lot-cereales *ngFor="let lot of lots"></app-lot-cereales>
 </div>
