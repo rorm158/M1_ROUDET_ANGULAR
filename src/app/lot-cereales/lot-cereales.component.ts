@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CamionComponent } from '../camion/camion.component';
 
 @Component({
   selector: 'app-lot-cereales',
@@ -13,7 +14,8 @@ export class LotCerealesComponent implements OnInit {
   tauxHumidite : String = Math.floor(Math.random() * 100).toString();;
   qualite : String = "Bonne";
   origine : String = "Paris";
-  constructor(/*public numLot: String, public type: String, public poids: Number, public tauxHumidite: Number, public qualite: Number, public origine: String*/) { 
+  
+  constructor() { 
     
   }
 

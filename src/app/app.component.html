@@ -5,23 +5,8 @@
 </div>
 <p>Arrivée des lots de céréales</p>
 <div>
-  <!--<table>
-    <tr>
-        <td>Numlot</td>
-        <td>Type</td>
-        <td>Poids</td>
-        <td>TauxHumidité</td>
-        <td>Qualité</td>
-        <td>Origine</td>
-    </tr>
-    <tr *ngFor="let lot of lots">
-        <td> {{lot.numLot}} </td>
-        <td> {{lot.type}} </td>
-        <td> {{lot.poids}} </td>
-        <td> {{lot.tauxHumidite}} </td>
-        <td> {{lot.qualite}} </td>
-        <td> {{lot.origine}}</td>
-    </tr>
- </table>-->
- <app-lot-cereales *ngFor="let lot of lots"></app-lot-cereales>
+  <button class="btn btn-success"
+              [disabled]="!camionDispo()"
+              (click)="ramenerLot()">Ajouter lot céréales</button>
+  <app-lot-cereales *ngFor="let lot of lots"></app-lot-cereales>
 </div>
