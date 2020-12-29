@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FossesReceptionComponent implements OnInit {
 
-  constructor() { }
+  fosses = [
+    {
+      num : '1'
+    },
+    {
+      num : '2'
+    }
+  ]
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
