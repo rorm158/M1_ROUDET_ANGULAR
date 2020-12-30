@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConteneurComponent implements OnInit {
 
-  constructor() { }
+  _capacite : Number;
+  _typeCereale : String;
+  _plein : Boolean;
+
+  constructor(capacite : Number, typeCereale : String, plein : Boolean) { 
+    this._capacite = capacite;
+    this._typeCereale = typeCereale;
+    this._plein = plein;
+  }
 
   ngOnInit(): void {
   }
