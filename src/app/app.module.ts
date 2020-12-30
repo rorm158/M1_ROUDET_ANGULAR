@@ -8,7 +8,12 @@ import { CamionComponent } from './camion/camion.component';
 import { LotService } from './services/lot.service';
 import { FossesReceptionComponent } from './fosses-reception/fosses-reception.component';
 import { ConteneurComponent } from './conteneur/conteneur.component';
+<<<<<<< HEAD
 import { ConvoyeurComponent } from './convoyeur/convoyeur.component';
+=======
+import { CelluleComponent } from './cellule/cellule.component';
+import { SondeComponent } from './sonde/sonde.component';
+>>>>>>> 15aae806afa1d305c2a1af3aa83c9e0559932685
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { ConvoyeurComponent } from './convoyeur/convoyeur.component';
     CamionComponent,
     FossesReceptionComponent,
     ConteneurComponent,
+<<<<<<< HEAD
     ConvoyeurComponent
+=======
+    CelluleComponent,
+    SondeComponent
+>>>>>>> 15aae806afa1d305c2a1af3aa83c9e0559932685
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { LotService } from './services/lot.service';
 export class AppComponent implements OnInit {
   title = 'beuzelin';
   lots : any[];
+  camions : any[];
 
   constructor (private lotService : LotService)
   {
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit {
   ngOnInit()
   {
     this.lots = this.lotService.lots;
+    this.camions = this.lotService.camions;
   }
 
   camionDispo()
