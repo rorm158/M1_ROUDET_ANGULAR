@@ -8,6 +8,8 @@ import { CamionComponent } from './camion/camion.component';
 import { LotService } from './services/lot.service';
 import { FossesReceptionComponent } from './fosses-reception/fosses-reception.component';
 import { ConteneurComponent } from './conteneur/conteneur.component';
+import { CelluleComponent } from './cellule/cellule.component';
+import { SondeComponent } from './sonde/sonde.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ConteneurComponent } from './conteneur/conteneur.component';
     LotCerealesComponent,
     CamionComponent,
     FossesReceptionComponent,
-    ConteneurComponent
+    ConteneurComponent,
+    CelluleComponent,
+    SondeComponent
   ],
   imports: [
     BrowserModule,
