@@ -10,6 +10,7 @@ import { FossesReceptionComponent } from './fosses-reception/fosses-reception.co
 import { ConteneurComponent } from './conteneur/conteneur.component';
 import { CelluleComponent } from './cellule/cellule.component';
 import { SondeComponent } from './sonde/sonde.component';
+import { SiloComponent } from './silo/silo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SondeComponent } from './sonde/sonde.component';
     FossesReceptionComponent,
     ConteneurComponent,
     CelluleComponent,
-    SondeComponent
+    SondeComponent,
+    SiloComponent
   ],
   imports: [
     BrowserModule,
