@@ -8,6 +8,7 @@ import { CamionComponent } from './camion/camion.component';
 import { LotService } from './services/lot.service';
 import { FossesReceptionComponent } from './fosses-reception/fosses-reception.component';
 import { ConteneurComponent } from './conteneur/conteneur.component';
+import { ConvoyeurComponent } from './convoyeur/convoyeur.component';
 import { CelluleComponent } from './cellule/cellule.component';
 import { SondeComponent } from './sonde/sonde.component';
 import { SiloComponent } from './silo/silo.component';
@@ -19,6 +20,7 @@ import { SiloComponent } from './silo/silo.component';
     CamionComponent,
     FossesReceptionComponent,
     ConteneurComponent,
+    ConvoyeurComponent,
     CelluleComponent,
     SondeComponent,
     SiloComponent
