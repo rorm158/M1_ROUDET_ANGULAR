@@ -9,6 +9,7 @@ import { LotService } from './services/lot.service';
 import { FossesReceptionComponent } from './fosses-reception/fosses-reception.component';
 import { ConteneurComponent } from './conteneur/conteneur.component';
 import { CelluleComponent } from './cellule/cellule.component';
+import { SondeComponent } from './sonde/sonde.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CelluleComponent } from './cellule/cellule.component';
     CamionComponent,
     FossesReceptionComponent,
     ConteneurComponent,
-    CelluleComponent
+    CelluleComponent,
+    SondeComponent
   ],
   imports: [
     BrowserModule,
