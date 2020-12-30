@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CamionComponent implements OnInit {
 
-  private plaque: string;
-	private plein: boolean;
-	private typeCereale: string;
-	private quantite: number;
-	private destination: string;
-	private action: boolean;
+  plaque: string ="CS-009-NN";
+	plein: boolean;
+	typeCereale: string;
+	quantite: number;
+	destination: string;
+	action: boolean;
 
   constructor() { }
 
@@ -28,5 +28,10 @@ export class CamionComponent implements OnInit {
   setAction(action : boolean)
   {
     this.action = action;
+  }
+
+  setTypeCereale(typeCereale)
+  {
+    this.typeCereale = typeCereale;
   }
 }

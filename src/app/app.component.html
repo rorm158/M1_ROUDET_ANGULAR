@@ -3,6 +3,8 @@
     Entreprise {{ title }}!
   </h1>
 </div>
+<p>Camions de livraison</p>
+<app-camion *ngFor="let camion of camions"></app-camion>
 <p>Arrivée des lots de céréales</p>
 <div>
   <button class="btn btn-success"
