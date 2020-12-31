@@ -7,30 +7,37 @@ export class LotService
 {
     lots: Array<LotCerealesComponent> = new Array<LotCerealesComponent>();
     camions: Array<CamionComponent> = new Array<CamionComponent>();
-    fosses: Array<FossesReceptionComponent> = new Array<FossesReceptionComponent>();
-    camionAdd : CamionComponent;
-
+    fosses : FossesReceptionComponent;
 
     constructor()
     {
         this.camions.push(new CamionComponent());
-        this.camions.push(new CamionComponent());
-        this.camions.push(new CamionComponent());
-        this.camions.push(new CamionComponent());
-
-        //this.fosses.push(new FossesReceptionComponent());
     }
 
     camionDispo()
     {
         let dispo = false;
         this.camions.forEach(function(camion) {
-            if (!camion.getAction())
+            if (camion.getAction())
             {
                 dispo = true;
             }
         });
         return dispo;
+    }
+
+    rendreDispo()
+    {
+        this.camions.forEach(function(camion) {
+            camion.action = true;
+        });
+    }
+
+    rendreNonDispo()
+    {
+        this.camions.forEach(function(camion) {
+            camion.action = false;
+        });
     }
 
     ramenerLot()

@@ -7,7 +7,7 @@ import { LotService } from './services/lot.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'beuzelin';
+  title = 'Beuzelin';
   lots : any[];
   camions : any[];
 
@@ -22,6 +22,16 @@ export class AppComponent implements OnInit {
     this.camions = this.lotService.camions;
   }
 
+  rendreDispo()
+  {
+    this.lotService.rendreDispo();
+  }
+
+  rendreNonDispo()
+  {
+    this.lotService.rendreNonDispo();
+  }
+
   camionDispo()
   {
     return this.lotService.camionDispo();
@@ -30,5 +40,6 @@ export class AppComponent implements OnInit {
   ramenerLot()
   {
     this.lotService.ramenerLot();
+    this.rendreNonDispo();
   }
 }

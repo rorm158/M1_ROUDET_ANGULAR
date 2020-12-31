@@ -14,7 +14,9 @@ export class CamionComponent implements OnInit {
 	destination: string;
 	action: boolean;
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
     this.action = false;

@@ -4,7 +4,10 @@
   </h1>
 </div>
 <p>Camions de livraison</p>
-<app-camion *ngFor="let camion of camions"></app-camion>
+<app-camion *ngFor="let camion of camions"
+                    [action]="camion.action"></app-camion>
+<button class="btn btn-success"
+              (click)="rendreDispo()">Rendre disponible</button>
 <p>Arrivée des lots de céréales</p>
 <div>
   <button class="btn btn-success"
