@@ -10,16 +10,17 @@ export class AppComponent implements OnInit {
   title = 'Beuzelin';
   lots : any[];
   camions : any[];
+  //index : number;
 
   constructor (private lotService : LotService)
   {
-    
+    this.lots = this.lotService.lots;
+    this.camions = this.lotService.camions;
   }
 
   ngOnInit()
   {
-    this.lots = this.lotService.lots;
-    this.camions = this.lotService.camions;
+    
   }
 
   rendreDispo()
@@ -42,4 +43,9 @@ export class AppComponent implements OnInit {
     this.lotService.ramenerLot();
     this.rendreNonDispo();
   }
+
+  /*cleani()
+  {
+    this.lotService.clean(this.index);
+  }*/
 }

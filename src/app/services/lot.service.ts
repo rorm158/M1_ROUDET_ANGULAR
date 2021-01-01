@@ -44,4 +44,9 @@ export class LotService
     {
         this.lots.push(new LotCerealesComponent());
     }
+
+    /*clean(i : number)
+    {
+        this.lots[i].clean(); 
+    }*/
 }

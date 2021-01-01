@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-camion',
@@ -12,7 +12,7 @@ export class CamionComponent implements OnInit {
 	typeCereale: string;
 	quantite: number;
 	destination: string;
-	action: boolean;
+	@Input() action: boolean;
 
   constructor() { 
     
