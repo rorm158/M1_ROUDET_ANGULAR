@@ -1,4 +1,4 @@
-import { Component, Inject, Injectable, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit, Input } from '@angular/core';
 import { ConteneurComponent } from '../conteneur/conteneur.component';
 import { LotCerealesComponent } from '../lot-cereales/lot-cereales.component';
 import {SondeComponent} from '../sonde/sonde.component';
@@ -10,7 +10,7 @@ import {SondeComponent} from '../sonde/sonde.component';
 })
 export class CelluleComponent extends ConteneurComponent {
 
-  private id : number;
+  @Input() id : number = 1;
   private nbSonde : number;
   private temperature : number;
   private lotCereale : LotCerealesComponent;
@@ -36,6 +36,18 @@ export class CelluleComponent extends ConteneurComponent {
     this.setTemperature(_temperature);
     this.setLotCereale(_lotCereale);
     this.setSondes(_sonde);
+  }
+
+  public estPleine() : Boolean{
+    return this.lotCereale != null;
+  }
+
+  public getLotCereales() : LotCerealesComponent{
+    return this.lotCereale;
+  }
+
+  public getId() : number{
+    return this.id;
   }
 
   public setId(_id:number) : void{

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Console } from 'console';
 import { LotService } from './services/lot.service';
+import { StockageService } from './services/stockage.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,10 @@ import { LotService } from './services/lot.service';
 })
 export class AppComponent implements OnInit {
   title = 'Beuzelin';
+  stockageService : StockageService = new StockageService();
   lots : any[];
   camions : any[];
+  silos : any[];
   //index : number;
 
   constructor (private lotService : LotService)
@@ -20,7 +24,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit()
   {
-    
+    this.silos = this.stockageService.silos;
+    console.log(this.stockageService.silos.length);
   }
 
   check()

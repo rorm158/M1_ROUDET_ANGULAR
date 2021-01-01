@@ -21,3 +21,6 @@
 
 <button class="btn btn-sm btn-success"
             (click)="check()">Vérifier</button>
+
+<app-silo *ngFor="let silo of silos"
+            [idSilo] = "silo.idSilo"></app-silo>
