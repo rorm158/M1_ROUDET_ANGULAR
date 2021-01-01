@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { ConteneurComponent } from '../conteneur/conteneur.component';
 import { LotCerealesComponent } from '../lot-cereales/lot-cereales.component';
 import {SondeComponent} from '../sonde/sonde.component';
@@ -10,29 +10,54 @@ import {SondeComponent} from '../sonde/sonde.component';
 })
 export class CelluleComponent extends ConteneurComponent {
 
-  private _id : number;
-  private _nbSonde : number;
-  private _temperature : number;
-  private _lotCereale : LotCerealesComponent;
-  private _sondes : Array<SondeComponent>;
+  private id : number;
+  private nbSonde : number;
+  private temperature : number;
+  private lotCereale : LotCerealesComponent;
+  private sondes : Array<SondeComponent>;
 
-  constructor(id : number, nbSonde : number, temperature : number, lotCereale : LotCerealesComponent, sondes : Array<SondeComponent>) { 
-    super(1000, lotCereale.type, false);
-    this._id = id;
-    this._nbSonde = nbSonde;
-    this._temperature = temperature;
-    this._lotCereale = lotCereale;
-    this._sondes = sondes;
+  constructor() { 
+    super();
   }
 
   public ForteTemperature() : Boolean {
-    return (this._temperature > 15);
+    return (this.temperature > 15);
   }
 
   public Ventiler() : void {
-    if(this._temperature > 10)
-      this._temperature--;
+    if(this.temperature > 10)
+      this.temperature--;
   }
+
+  initCellule(_id:number, _nbSonde:number, _temperature:number, _lotCereale:LotCerealesComponent, _sondes:Array<SondeComponent>) : void{
+    super.initConteneur(1000, _lotCereale.type.toString(), false);
+    this.setId(_id);
+    this.setNbSonde(_nbSonde);
+    this.setTemperature(_temperature);
+    this.setLotCereale(_lotCereale);
+    this.setSondes(_sondes);
+  }
+
+  setId(_id:number) : void{
+    this.id = _id;
+  }
+
+  setNbSonde(_nbSonde:number) : void{
+    this.nbSonde = _nbSonde;
+  }
+
+  setTemperature(_temperature:number) : void{
+    this.temperature = _temperature;
+  }
+
+  setLotCereale(_lotCereale:LotCerealesComponent) : void{
+    this.lotCereale = _lotCereale;
+  }
+
+  setSondes(_sondes:Array<SondeComponent>) : void{
+    this.sondes = _sondes;
+  }
+
 
   ngOnInit(): void {
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { CelluleComponent } from '../cellule/cellule.component';
 
 @Component({
@@ -8,17 +8,32 @@ import { CelluleComponent } from '../cellule/cellule.component';
 })
 export class SiloComponent implements OnInit {
 
-  _listeCellule : Array<CelluleComponent>;
-  _nbCellule : number;
-  _idSilo : number;
+  private listeCellule : Array<CelluleComponent>;
+  private nbCellule : number;
+  private idSilo : number;
 
-  constructor(listeCellule : Array<CelluleComponent>, nbCellule : number, idSilo : number) { 
-    this._listeCellule = listeCellule;
-    this._nbCellule = nbCellule;
-    this._idSilo = idSilo;
+  constructor() { 
   }
 
   ngOnInit(): void {
+  }
+
+  initSilo(_listeCellule:Array<CelluleComponent>, _nbCellule : number, _idSilo : number) : void{
+    this.setListeCellule(_listeCellule);
+    this.setNbCellule(_nbCellule);
+    this.setSilo(_idSilo);
+  }
+
+  setListeCellule(_listeCellule:Array<CelluleComponent>) : void{
+    this.listeCellule = _listeCellule;
+  }
+
+  setNbCellule(_nbCellule : number) : void{
+    this.nbCellule = _nbCellule;
+  }
+
+  setSilo(_idSilo : number) : void{
+    this.idSilo = _idSilo;
   }
 
 }

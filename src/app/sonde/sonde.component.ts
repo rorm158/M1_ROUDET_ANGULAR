@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { CelluleComponent } from '../cellule/cellule.component';
 
 @Component({
@@ -8,12 +8,10 @@ import { CelluleComponent } from '../cellule/cellule.component';
 })
 export class SondeComponent implements OnInit {
 
-  private _idSonde : number;
-  private _cellules : Array<CelluleComponent>;
+  private idSonde : number;
+  private cellules : Array<CelluleComponent>;
 
-  constructor(idSonde : number, cellules : Array<CelluleComponent>) { 
-    this._idSonde = idSonde;
-    this._cellules = cellules;
+  constructor() { 
   }
 
   public Ventile() : void {
@@ -27,4 +25,16 @@ export class SondeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  initSonde(_idSonde:number, _cellules : Array<CelluleComponent>) : void{
+    this.setIdSonde(_idSonde);
+    this.setCellules(_cellules);
+  }
+
+  setIdSonde(_idSonde:number) : void{
+    this.idSonde = _idSonde;
+  }
+
+  setCellules(_cellules : Array<CelluleComponent>) : void{
+    this.cellules = _cellules;
+  }
 }
