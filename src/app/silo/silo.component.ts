@@ -18,21 +18,21 @@ export class SiloComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  initSilo(_listeCellule:Array<CelluleComponent>, _nbCellule : number, _idSilo : number) : void{
+  public initSilo(_listeCellule:Array<CelluleComponent>, _nbCellule : number, _idSilo : number) : void{
     this.setListeCellule(_listeCellule);
     this.setNbCellule(_nbCellule);
     this.setSilo(_idSilo);
   }
 
-  setListeCellule(_listeCellule:Array<CelluleComponent>) : void{
+  public setListeCellule(_listeCellule:Array<CelluleComponent>) : void{
     this.listeCellule = _listeCellule;
   }
 
-  setNbCellule(_nbCellule : number) : void{
+  public setNbCellule(_nbCellule : number) : void{
     this.nbCellule = _nbCellule;
   }
 
-  setSilo(_idSilo : number) : void{
+  public setSilo(_idSilo : number) : void{
     this.idSilo = _idSilo;
   }
 

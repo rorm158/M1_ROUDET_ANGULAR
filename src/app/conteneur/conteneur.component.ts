@@ -17,21 +17,21 @@ export class ConteneurComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  initConteneur(_capacite:number, _type:string, _plein:boolean) : void{
+  public initConteneur(_capacite:number, _type:string, _plein:boolean) : void{
     this.setCapacite(_capacite);
     this.setTypeCereale(_type);
     this.setPlein(_plein);
   }
 
-  setCapacite(_capacite:number) : void{
+  public setCapacite(_capacite:number) : void{
     this.capacite = _capacite;
   }
 
-  setTypeCereale(_type:string) : void{
+  public setTypeCereale(_type:string) : void{
     this.typeCereale = _type;
   }
 
-  setPlein(_plein:boolean) : void{
+  public setPlein(_plein:boolean) : void{
     this.plein = _plein;
   }
 

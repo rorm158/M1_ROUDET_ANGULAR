@@ -9,13 +9,13 @@ import { CelluleComponent } from '../cellule/cellule.component';
 export class SondeComponent implements OnInit {
 
   private idSonde : number;
-  private cellules : Array<CelluleComponent>;
+  private cellule : CelluleComponent;
 
   constructor() { 
   }
 
   public Ventile() : void {
-    
+    this.cellule.Ventiler();
   }
 
   public DeclencheAlarme() : void {
@@ -25,16 +25,16 @@ export class SondeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  initSonde(_idSonde:number, _cellules : Array<CelluleComponent>) : void{
+  public initSonde(_idSonde:number, _cellule : CelluleComponent) : void{
     this.setIdSonde(_idSonde);
-    this.setCellules(_cellules);
+    this.setCellules(_cellule);
   }
 
-  setIdSonde(_idSonde:number) : void{
+  public setIdSonde(_idSonde:number) : void{
     this.idSonde = _idSonde;
   }
 
-  setCellules(_cellules : Array<CelluleComponent>) : void{
-    this.cellules = _cellules;
+  public setCellules(_cellule : CelluleComponent) : void{
+    this.cellule = _cellule;
   }
 }

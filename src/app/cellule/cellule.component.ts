@@ -14,7 +14,7 @@ export class CelluleComponent extends ConteneurComponent {
   private nbSonde : number;
   private temperature : number;
   private lotCereale : LotCerealesComponent;
-  private sondes : Array<SondeComponent>;
+  private sonde : SondeComponent;
 
   constructor() { 
     super();
@@ -29,33 +29,33 @@ export class CelluleComponent extends ConteneurComponent {
       this.temperature--;
   }
 
-  initCellule(_id:number, _nbSonde:number, _temperature:number, _lotCereale:LotCerealesComponent, _sondes:Array<SondeComponent>) : void{
+  public initCellule(_id:number, _nbSonde:number, _temperature:number, _lotCereale:LotCerealesComponent, _sonde:SondeComponent) : void{
     super.initConteneur(1000, _lotCereale.type.toString(), false);
     this.setId(_id);
     this.setNbSonde(_nbSonde);
     this.setTemperature(_temperature);
     this.setLotCereale(_lotCereale);
-    this.setSondes(_sondes);
+    this.setSondes(_sonde);
   }
 
-  setId(_id:number) : void{
+  public setId(_id:number) : void{
     this.id = _id;
   }
 
-  setNbSonde(_nbSonde:number) : void{
+  public setNbSonde(_nbSonde:number) : void{
     this.nbSonde = _nbSonde;
   }
 
-  setTemperature(_temperature:number) : void{
+  public setTemperature(_temperature:number) : void{
     this.temperature = _temperature;
   }
 
-  setLotCereale(_lotCereale:LotCerealesComponent) : void{
+  public setLotCereale(_lotCereale:LotCerealesComponent) : void{
     this.lotCereale = _lotCereale;
   }
 
-  setSondes(_sondes:Array<SondeComponent>) : void{
-    this.sondes = _sondes;
+  public setSondes(_sonde:SondeComponent) : void{
+    this.sonde = _sonde;
   }
 
 
