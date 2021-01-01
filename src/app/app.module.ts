@@ -12,6 +12,7 @@ import { ConvoyeurComponent } from './convoyeur/convoyeur.component';
 import { CelluleComponent } from './cellule/cellule.component';
 import { SondeComponent } from './sonde/sonde.component';
 import { SiloComponent } from './silo/silo.component';
+import { LotViewComponent } from './lot-view/lot-view.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SiloComponent } from './silo/silo.component';
     ConvoyeurComponent,
     CelluleComponent,
     SondeComponent,
-    SiloComponent
+    SiloComponent,
+    LotViewComponent
   ],
   imports: [
     BrowserModule,
