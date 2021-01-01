@@ -1,1 +1,15 @@
-<p>lot-view works!</p>
+<p>Camions de livraison</p>
+<app-camion *ngFor="let camion of camions"
+            [action] = "camion.action"></app-camion>
+<button class="btn btn-success"
+              (click)="rendreDispo()">Rendre disponible</button>
+<p>Arrivée des lots de céréales</p>
+<div>
+  <button class="btn btn-success"
+              [disabled]="!camionDispo()"
+              (click)="ramenerLot()">Ajouter lot céréales</button>
+  <app-lot-cereales *ngFor="let lot of lots; let i = index"
+                    [numLot]="i"
+                    [poids]="lot.poids"
+                    [index]="i"></app-lot-cereales>
+</div>

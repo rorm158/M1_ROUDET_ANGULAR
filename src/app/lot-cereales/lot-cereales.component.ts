@@ -23,6 +23,11 @@ export class LotCerealesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setNumLot(num : string)
+  {
+    this.numLot = num;
+  }
+
   analyser()
   {
     this.poids = (Math.floor(Math.random() * 30) + 5).toString();

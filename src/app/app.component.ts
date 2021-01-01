@@ -23,7 +23,11 @@ export class AppComponent implements OnInit {
     
   }
 
-  rendreDispo()
+  check()
+  {
+    console.log(this.lots);
+  }
+  /*rendreDispo()
   {
     this.lotService.rendreDispo();
   }
@@ -42,7 +46,7 @@ export class AppComponent implements OnInit {
   {
     this.lotService.ramenerLot();
     this.rendreNonDispo();
-  }
+  }*/
 
   /*cleani()
   {
