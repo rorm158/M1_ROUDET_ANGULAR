@@ -1,12 +1,10 @@
 import { Component, Inject, Injectable, OnInit } from '@angular/core';
-import { type } from 'os';
 
 @Component({
   selector: 'app-conteneur',
   templateUrl: './conteneur.component.html',
   styleUrls: ['./conteneur.component.css']
 })
-@Inject
 export class ConteneurComponent implements OnInit {
 
   protected capacite : number;
