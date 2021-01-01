@@ -15,6 +15,9 @@
         <td> {{qualite}} </td>
         <td> {{origine}}</td>
         <td><button class="btn btn-sm btn-success"
-            (click)="analyse()">Analyser</button></td>
+            [disabled]="analyse"
+            (click)="analyser()">Analyser</button></td>
+        <td *ngIf="analyse"><button class="btn btn-sm btn-success"
+            (click)="clean()">Nettoyer</button></td>
     </tr>
  </table>
