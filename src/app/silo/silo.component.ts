@@ -9,10 +9,10 @@ import { CelluleComponent } from '../cellule/cellule.component';
 export class SiloComponent implements OnInit {
 
   _listeCellule : Array<CelluleComponent>;
-  _nbCellule : Number;
-  _idSilo : Number;
+  _nbCellule : number;
+  _idSilo : number;
 
-  constructor(listeCellule : Array<CelluleComponent>, nbCellule : Number, idSilo : Number) { 
+  constructor(listeCellule : Array<CelluleComponent>, nbCellule : number, idSilo : number) { 
     this._listeCellule = listeCellule;
     this._nbCellule = nbCellule;
     this._idSilo = idSilo;

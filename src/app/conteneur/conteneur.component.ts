@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConteneurComponent implements OnInit {
 
-  protected _capacite : Number;
+  protected _capacite : number;
   protected _typeCereale : String;
   protected _plein : Boolean;
 
-  constructor(capacite : Number, typeCereale : String, plein : Boolean) { 
+  constructor(capacite : number, typeCereale : String, plein : Boolean) { 
     this._capacite = capacite;
     this._typeCereale = typeCereale;
     this._plein = plein;

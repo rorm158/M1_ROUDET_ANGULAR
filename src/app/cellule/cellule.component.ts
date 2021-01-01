@@ -10,13 +10,13 @@ import {SondeComponent} from '../sonde/sonde.component';
 })
 export class CelluleComponent extends ConteneurComponent {
 
-  private _id : Number;
-  private _nbSonde : Number;
-  private _temperature : Number;
+  private _id : number;
+  private _nbSonde : number;
+  private _temperature : number;
   private _lotCereale : LotCerealesComponent;
   private _sondes : Array<SondeComponent>;
 
-  constructor(id : Number, nbSonde : Number, temperature : Number, lotCereale : LotCerealesComponent, sondes : Array<SondeComponent>) { 
+  constructor(id : number, nbSonde : number, temperature : number, lotCereale : LotCerealesComponent, sondes : Array<SondeComponent>) { 
     super(1000, lotCereale.type, false);
     this._id = id;
     this._nbSonde = nbSonde;
@@ -25,8 +25,13 @@ export class CelluleComponent extends ConteneurComponent {
     this._sondes = sondes;
   }
 
-  public ForteTemperateur() : Boolean {
-    return (this._temperature > 35);
+  public ForteTemperature() : Boolean {
+    return (this._temperature > 15);
+  }
+
+  public Ventiler() : void {
+    if(this._temperature > 10)
+      this._temperature--;
   }
 
   ngOnInit(): void {
