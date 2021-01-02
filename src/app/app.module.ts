@@ -14,6 +14,7 @@ import { SondeComponent } from './sonde/sonde.component';
 import { SiloComponent } from './silo/silo.component';
 import { LotViewComponent } from './lot-view/lot-view.component';
 import { FormsModule } from '@angular/forms';
+import { StockageService } from './services/stockage.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    LotService
+    LotService,
+    StockageService
   ],
   bootstrap: [AppComponent]
 })

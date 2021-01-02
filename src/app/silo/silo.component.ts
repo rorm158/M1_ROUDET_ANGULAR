@@ -1,4 +1,4 @@
-import { Component, Inject, Injectable, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CelluleComponent } from '../cellule/cellule.component';
 import { LotCerealesComponent } from '../lot-cereales/lot-cereales.component';
 import { SondeComponent } from '../sonde/sonde.component';
@@ -11,15 +11,15 @@ import { SondeComponent } from '../sonde/sonde.component';
 export class SiloComponent implements OnInit {
 
   //@Input() listeCellule : Array<CelluleComponent>;
-  listeCellule: Array<CelluleComponent> = new Array<CelluleComponent>(); //RAJOUT
-  private listeSonde : Array<SondeComponent>;
-  private nbCellule : number;
+  @Input() listeCellule: Array<CelluleComponent> = new Array<CelluleComponent>(); //RAJOUT
+  listeSonde : Array<SondeComponent> = new Array<SondeComponent>();
+  nbCellule : number;
   @Input() idSilo : number;
 
   constructor() { 
-    this.listeCellule.push(new CelluleComponent()); //RAJOUT
-    this.listeCellule.push(new CelluleComponent()); //RAJOUT
-    this.listeCellule.push(new CelluleComponent()); //RAJOUT
+    //this.listeCellule.push(new CelluleComponent()); //RAJOUT
+    //this.listeCellule.push(new CelluleComponent()); //RAJOUT
+    //this.listeCellule.push(new CelluleComponent()); //RAJOUT
   }
 
   ngOnInit(): void {
@@ -27,17 +27,24 @@ export class SiloComponent implements OnInit {
 
   //Initialisation du silo
   public initSilo(_nbCellule : number, _idSilo : number) : void{
-    var cellules : Array<CelluleComponent> = new Array<CelluleComponent>(_nbCellule);
+    //var cellules : Array<CelluleComponent> = new Array<CelluleComponent>();
+    //this.listeCellule = new Array<CelluleComponent>();
+    //this.listeSonde = new Array<SondeComponent>();
+
     var i:number = _nbCellule * _idSilo;
-    cellules.forEach(function(cellule){
+
+    for(var _i = 0; _i < _nbCellule; _i++){
+      var cellule : CelluleComponent = new CelluleComponent();
       var sonde:SondeComponent = new SondeComponent();
       sonde.initSonde(i, cellule);
       cellule.initCellule(i, 1, 15, null, sonde);
       this.listeSonde.push(sonde);
+      this.listeCellule.push(cellule);
       i++;
-    });
+    }
 
-    this.setListeCellule(cellules);
+    //this.setListeCellule(cellules);
+    console.log("MEOWWW " + this.listeCellule[0].id);
     this.setNbCellule(_nbCellule);
     this.setSilo(_idSilo);
   }

@@ -7,9 +7,9 @@ import { Component, Inject, Injectable, OnInit } from '@angular/core';
 })
 export class ConteneurComponent implements OnInit {
 
-  protected capacite : number;
-  protected typeCereale : string;
-  protected plein : boolean;
+  capacite : number;
+  typeCereale : string;
+  plein : boolean;
 
   constructor() { 
   }
