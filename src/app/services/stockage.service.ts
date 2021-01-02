@@ -16,7 +16,7 @@ export class StockageService{
     public ajouterSilo() : void{
         this.silos.push(new SiloComponent());
         this.silos[this.indice_silo].initSilo(this.nb_cellules_max, this.indice_silo);
-        console.log(this.silos[this.indice_silo]);
+        console.log("MEOW " + this.silos[0].listeCellule.length);
         this.indice_silo++;
     }
 

@@ -10,7 +10,7 @@ export class LotViewComponent implements OnInit {
   title = 'Beuzelin';
   lots : any[];
   camions : any[];
-  //index : number;
+  selector : number;
 
   constructor(private lotService : LotService ) {
     this.lots = this.lotService.lots;
@@ -39,6 +39,11 @@ export class LotViewComponent implements OnInit {
   {
     this.lotService.ramenerLot();
     this.rendreNonDispo();
+  }
+
+  check()
+  {
+    console.log(this.selector);
   }
 
 }

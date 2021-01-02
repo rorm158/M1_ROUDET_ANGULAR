@@ -10,11 +10,11 @@ import {SondeComponent} from '../sonde/sonde.component';
 })
 export class CelluleComponent extends ConteneurComponent {
 
-  @Input() id : number = 1;
-  private nbSonde : number;
-  private temperature : number;
-  private lotCereale : LotCerealesComponent;
-  private sonde : SondeComponent;
+  @Input() id : number = 6;
+  @Input() nbSonde : number = 7;
+  @Input() temperature : number = 8;
+  @Input() lotCereale : LotCerealesComponent;
+  @Input() sonde : SondeComponent;
 
   constructor() { 
     super();

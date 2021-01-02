@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Console } from 'console';
 import { LotService } from './services/lot.service';
 import { StockageService } from './services/stockage.service';
 
@@ -32,6 +31,7 @@ export class AppComponent implements OnInit {
   {
     console.log(this.lots);
   }
+
   /*rendreDispo()
   {
     this.lotService.rendreDispo();

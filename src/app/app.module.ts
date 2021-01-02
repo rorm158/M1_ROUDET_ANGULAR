@@ -13,6 +13,7 @@ import { CelluleComponent } from './cellule/cellule.component';
 import { SondeComponent } from './sonde/sonde.component';
 import { SiloComponent } from './silo/silo.component';
 import { LotViewComponent } from './lot-view/lot-view.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LotViewComponent } from './lot-view/lot-view.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     LotService

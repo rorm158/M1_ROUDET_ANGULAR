@@ -10,12 +10,16 @@ import { SondeComponent } from '../sonde/sonde.component';
 })
 export class SiloComponent implements OnInit {
 
-  private listeCellule : Array<CelluleComponent>;
+  //@Input() listeCellule : Array<CelluleComponent>;
+  listeCellule: Array<CelluleComponent> = new Array<CelluleComponent>(); //RAJOUT
   private listeSonde : Array<SondeComponent>;
   private nbCellule : number;
   @Input() idSilo : number;
 
   constructor() { 
+    this.listeCellule.push(new CelluleComponent()); //RAJOUT
+    this.listeCellule.push(new CelluleComponent()); //RAJOUT
+    this.listeCellule.push(new CelluleComponent()); //RAJOUT
   }
 
   ngOnInit(): void {

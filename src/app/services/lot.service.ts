@@ -43,6 +43,11 @@ export class LotService
     ramenerLot()
     {
         this.lots.push(new LotCerealesComponent());
+        let i : number = 0;
+        this.lots.forEach(function(lot){
+            lot.setNumLot(i);
+            i++;
+        });
     }
 
     /*clean(i : number)

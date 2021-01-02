@@ -1,5 +1,13 @@
-<tr>
-    <td>
-        {{idSilo}}
-    </td>
-</tr>
+<table>
+    <tr>
+        <td>Silo {{idSilo}}</td>
+
+    </tr>
+    <tr>
+        <td>Num cellule</td>
+        <td>Nb sondes</td>
+        <td>Température</td>
+    </tr>
+    <app-cellule *ngFor="let cellule of listeCellule"
+                        [id]="cellule.id"></app-cellule>
+</table>

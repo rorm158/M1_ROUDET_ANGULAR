@@ -23,9 +23,9 @@ export class LotCerealesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setNumLot(num : string)
+  setNumLot(num : number)
   {
-    this.numLot = num;
+    this.numLot = num.toString();
   }
 
   analyser()
