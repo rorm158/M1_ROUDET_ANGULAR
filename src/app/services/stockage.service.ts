@@ -1,8 +1,9 @@
+import { Component, Input, OnInit } from '@angular/core';
 import { LotCerealesComponent } from "../lot-cereales/lot-cereales.component";
 import { SiloComponent } from "../silo/silo.component";
 
 export class StockageService{
-    silos : Array<SiloComponent> = new Array<SiloComponent>();  //Silos
+    @Input() silos : Array<SiloComponent> = new Array<SiloComponent>();  //Silos
     nb_cellules_max : number = 10;  //Nombre max de cellules par silo
     indice_silo : number = 0;   //ID courant du prochain silo à créer
 

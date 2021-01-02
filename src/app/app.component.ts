@@ -9,22 +9,24 @@ import { StockageService } from './services/stockage.service';
 })
 export class AppComponent implements OnInit {
   title = 'Beuzelin';
-  stockageService : StockageService = new StockageService();
+  //stockageService : StockageService;// = new StockageService();
   lots : any[];
   camions : any[];
   silos : any[];
   //index : number;
 
-  constructor (private lotService : LotService)
+  constructor (private lotService : LotService, private stockageService : StockageService)
   {
     this.lots = this.lotService.lots;
     this.camions = this.lotService.camions;
+    this.silos = this.stockageService.silos;
+    console.log(this.silos[0].listeCellule[0].id);
+    this.silos[0].listeCellule[0].id = 10;
+    console.log(this.silos[0].listeCellule[0].id);
   }
 
   ngOnInit()
   {
-    this.silos = this.stockageService.silos;
-    console.log(this.stockageService.silos.length);
   }
 
   check()

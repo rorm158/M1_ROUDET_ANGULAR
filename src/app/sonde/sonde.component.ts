@@ -1,4 +1,4 @@
-import { Component, Inject, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CelluleComponent } from '../cellule/cellule.component';
 
 @Component({

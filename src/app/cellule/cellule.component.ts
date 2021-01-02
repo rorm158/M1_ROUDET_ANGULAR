@@ -1,4 +1,4 @@
-import { Component, Inject, Injectable, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ConteneurComponent } from '../conteneur/conteneur.component';
 import { LotCerealesComponent } from '../lot-cereales/lot-cereales.component';
 import {SondeComponent} from '../sonde/sonde.component';
@@ -30,7 +30,7 @@ export class CelluleComponent extends ConteneurComponent {
   }
 
   public initCellule(_id:number, _nbSonde:number, _temperature:number, _lotCereale:LotCerealesComponent, _sonde:SondeComponent) : void{
-    super.initConteneur(1000, _lotCereale.type.toString(), false);
+    super.initConteneur(1000, _lotCereale == null ? "" : _lotCereale.type.toString(), false);
     this.setId(_id);
     this.setNbSonde(_nbSonde);
     this.setTemperature(_temperature);
