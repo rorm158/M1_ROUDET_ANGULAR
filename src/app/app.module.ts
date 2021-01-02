@@ -15,6 +15,12 @@ import { SiloComponent } from './silo/silo.component';
 import { LotViewComponent } from './lot-view/lot-view.component';
 import { FormsModule } from '@angular/forms';
 import { StockageService } from './services/stockage.service';
+import { Routes,RouterModule } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'lots', component: LotViewComponent },
+  { path: '', component: LotViewComponent }
+];
 
 @NgModule({
   declarations: [
@@ -31,7 +37,7 @@ import { StockageService } from './services/stockage.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
     FormsModule
   ],
   providers: [
