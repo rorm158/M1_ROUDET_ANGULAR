@@ -15,7 +15,7 @@ export class CelluleComponent extends ConteneurComponent {
   @Input() temperature : number;
   @Input() lotCereale : LotCerealesComponent;
   @Input() sonde : SondeComponent;
-  @Input() type : string;
+  @Input() type : number;
 
   constructor() { 
     super();
@@ -34,7 +34,7 @@ export class CelluleComponent extends ConteneurComponent {
     var t = "Vide";
     if(_lotCereale != null)
       t = _lotCereale.type.toString();
-    this.type = t;
+    this.type = 1;
     super.initConteneur(1000, t, false);
     this.setId(_id);
     this.setNbSonde(_nbSonde);

@@ -1,11 +1,13 @@
 import { Component, Input, OnInit, Injectable } from '@angular/core';
 import { LotCerealesComponent } from "../lot-cereales/lot-cereales.component";
 import { SiloComponent } from "../silo/silo.component";
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class StockageService{
     //silos : Array<SiloComponent> = new Array<SiloComponent>();  //Silos
     silo : SiloComponent = new SiloComponent();
+    siloSubject = new Subject<SiloComponent>();
     nb_cellules_max : number = 10;  //Nombre max de cellules par silo
     indice_silo : number = 0;   //ID courant du prochain silo à créer
 
@@ -22,6 +24,11 @@ export class StockageService{
         console.log("MEOW " + this.silos[0].listeCellule.length);
         this.indice_silo++;
     }*/
+
+    emitSiloSubject(){
+        this.silo.listeCellule[0].type = 0;
+        this.siloSubject.next(this.silo);
+    }
 
     //Ajoute un lot de céréales dans l'un des silos existants (renvoie true si l'ajout a bien été effectué)
     public ajouterLotCereales(lotCereale : LotCerealesComponent) : Boolean{
