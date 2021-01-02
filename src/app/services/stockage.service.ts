@@ -11,11 +11,11 @@ export class StockageService{
     nb_cellules_max : number = 10;  //Nombre max de cellules par silo
     indice_silo : number = 0;   //ID courant du prochain silo à créer
 
-    /*constructor() {
+    constructor() {
+        /*this.ajouterSilo();
         this.ajouterSilo();
-        this.ajouterSilo();
-        this.ajouterSilo();
-    }*/
+        this.ajouterSilo();*/
+    }
 
     //Ajoute un nouveau silo à la liste des silos
     /*public ajouterSilo() : void{
@@ -26,7 +26,6 @@ export class StockageService{
     }*/
 
     emitSiloSubject(){
-        this.silo.listeCellule[0].type = 0;
         this.siloSubject.next(this.silo);
     }
 

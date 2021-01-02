@@ -11,29 +11,20 @@ import { SiloComponent } from './silo/silo.component';
 })
 export class AppComponent implements OnInit {
   title = 'Beuzelin';
-  //stockageService : StockageService;// = new StockageService();
   lots : any[];
   camions : any[];
-  silo : SiloComponent;
-  siloSubscription : Subscription;
+  
   //index : number;
 
   constructor (private lotService : LotService, private stockageService : StockageService)
   {
     this.lots = this.lotService.lotRecup;
     this.camions = this.lotService.camions;
-    //this.silo = this.stockageService.silo;
-    //console.log(this.silo.listeCellule[0].typeCereale);
-    //this.silo.listeCellule[0].type = 0;
   }
 
   ngOnInit()
   {
-    this.siloSubscription = this.stockageService.siloSubject.subscribe((silo : SiloComponent) => {
-      this.silo = silo;
-      this.silo.listeCellule[0].type = 0;
-    });
-    this.stockageService.emitSiloSubject();
+    
   }
 
   check()

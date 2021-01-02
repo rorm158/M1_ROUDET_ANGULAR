@@ -1,6 +1,6 @@
 <table>
     <tr>
-        <th>Silo {{idSilo}}</th>
+        <th>Silo</th>
 
     </tr>
     <tr>
@@ -9,6 +9,8 @@
         <td>Température</td>
         <td>Céréales contenues</td>
         <td>Cliquer</td>
+        <td>Cliquer</td>
+        <td>État</td>
     </tr>
     <tr *ngFor = "let cellule of listeCellule">
         <td>
@@ -25,7 +27,14 @@
         </td>
         <td>
             <button class="btn btn-success"
-                  (click)="cellule.setTemperature(5)">Ajuster</button>
+                  (click)="cellule.Ventiler()">Ventiler</button>
+        </td>
+        <td>
+            <button class="btn btn-success"
+                  (click)="cellule.SimulerAccident()">Simuler accident</button>
+        </td>
+        <td>
+            {{cellule.etat}}
         </td>
     </tr>
 </table>
