@@ -31,6 +31,7 @@ export class LotService
     {
         this.camions.forEach(function(camion) {
             camion.action = true;
+            camion.typeCereale = "ferme la";
         });
     }
 

@@ -1,18 +1,26 @@
 <table>
     <tr>
-        <td>Silo {{idSilo}}</td>
+        <th>Silo {{idSilo}}</th>
 
     </tr>
     <tr>
         <td>Num cellule</td>
         <td>Nb sondes</td>
         <td>Température</td>
+        <td>Céréales contenues</td>
     </tr>
-    <tr>
-        <app-cellule *ngFor="let cellule of listeCellule"
-                        [id]="cellule.id"
-                        [nbSonde]="cellule.nbSonde"
-                        [temperature]="cellule.temperature">
-        </app-cellule>
+    <tr *ngFor = "let cellule of listeCellule">
+        <td>
+            {{cellule.id}}
+        </td>
+        <td>
+            {{cellule.nbSonde}}
+        </td>
+        <td>
+            {{cellule.temperature}}
+        </td>
+        <td>
+            {{cellule.type}}
+        </td>
     </tr>
 </table>

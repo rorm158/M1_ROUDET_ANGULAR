@@ -1,4 +1,4 @@
-import { Component, Inject, Injectable, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-conteneur',
@@ -8,7 +8,7 @@ import { Component, Inject, Injectable, OnInit } from '@angular/core';
 export class ConteneurComponent implements OnInit {
 
   capacite : number;
-  typeCereale : string;
+  @Input() typeCereale : string = "Vide";
   plein : boolean;
 
   constructor() { 

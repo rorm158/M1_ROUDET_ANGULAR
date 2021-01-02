@@ -21,6 +21,8 @@ export class AppComponent implements OnInit {
     this.lots = this.lotService.lotRecup;
     this.camions = this.lotService.camions;
     this.silo = this.stockageService.silo;
+    console.log(this.silo.listeCellule[0].typeCereale);
+    this.silo.listeCellule[0].type = "lol";
   }
 
   ngOnInit()

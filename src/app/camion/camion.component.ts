@@ -9,7 +9,7 @@ export class CamionComponent implements OnInit {
 
   plaque: string ="CS-009-NN";
 	plein: boolean;
-	typeCereale: string;
+	@Input() typeCereale: string;
 	quantite: number;
 	destination: string;
 	@Input() action: boolean;

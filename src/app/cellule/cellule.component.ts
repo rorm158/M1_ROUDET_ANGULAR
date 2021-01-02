@@ -15,6 +15,7 @@ export class CelluleComponent extends ConteneurComponent {
   @Input() temperature : number;
   @Input() lotCereale : LotCerealesComponent;
   @Input() sonde : SondeComponent;
+  @Input() type : string;
 
   constructor() { 
     super();
@@ -30,7 +31,11 @@ export class CelluleComponent extends ConteneurComponent {
   }
 
   public initCellule(_id:number, _nbSonde:number, _temperature:number, _lotCereale:LotCerealesComponent, _sonde:SondeComponent) : void{
-    super.initConteneur(1000, _lotCereale == null ? "" : _lotCereale.type.toString(), false);
+    var t = "Vide";
+    if(_lotCereale != null)
+      t = _lotCereale.type.toString();
+    this.type = t;
+    super.initConteneur(1000, t, false);
     this.setId(_id);
     this.setNbSonde(_nbSonde);
     this.setTemperature(_temperature);
@@ -64,6 +69,10 @@ export class CelluleComponent extends ConteneurComponent {
 
   public setLotCereale(_lotCereale:LotCerealesComponent) : void{
     this.lotCereale = _lotCereale;
+    if(_lotCereale == null)
+      this.typeCereale = "Vide";
+    else
+      this.typeCereale = this.lotCereale.type.toString();
   }
 
   public setSondes(_sonde:SondeComponent) : void{
