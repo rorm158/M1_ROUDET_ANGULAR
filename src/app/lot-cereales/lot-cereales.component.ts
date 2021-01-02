@@ -15,7 +15,9 @@ export class LotCerealesComponent implements OnInit {
   qualite : String = "Mauvaise";
   origine : String = "Paris";
   analyse : boolean = false;
+  nettoye : boolean = false;
   @Input() index : number;
+  ajoute : boolean = false;
   
   constructor() { 
   }
@@ -39,5 +41,11 @@ export class LotCerealesComponent implements OnInit {
   {
     this.tauxHumidite = "15";
     this.qualite = "Bonne";
+    this.nettoye = true;
+  }
+
+  add()
+  {
+    this.ajoute = true;
   }
 }

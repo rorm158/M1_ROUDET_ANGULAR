@@ -40,10 +40,4 @@ export class LotViewComponent implements OnInit {
     this.lotService.ramenerLot();
     this.rendreNonDispo();
   }
-
-  check()
-  {
-    console.log(this.selector);
-  }
-
 }
