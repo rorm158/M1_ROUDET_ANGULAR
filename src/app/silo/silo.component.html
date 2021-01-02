@@ -8,6 +8,11 @@
         <td>Nb sondes</td>
         <td>Température</td>
     </tr>
-    <app-cellule *ngFor="let cellule of listeCellule"
-                        [id]="cellule.id"></app-cellule>
+    <tr>
+        <app-cellule *ngFor="let cellule of listeCellule"
+                        [id]="cellule.id"
+                        [nbSonde]="cellule.nbSonde"
+                        [temperature]="cellule.temperature">
+        </app-cellule>
+    </tr>
 </table>

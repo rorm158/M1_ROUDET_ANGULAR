@@ -20,6 +20,7 @@ export class SiloComponent implements OnInit {
     //this.listeCellule.push(new CelluleComponent()); //RAJOUT
     //this.listeCellule.push(new CelluleComponent()); //RAJOUT
     //this.listeCellule.push(new CelluleComponent()); //RAJOUT
+    this.initSilo(10, 0);
   }
 
   ngOnInit(): void {

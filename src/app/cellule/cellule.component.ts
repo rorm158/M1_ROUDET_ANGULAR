@@ -10,9 +10,9 @@ import {SondeComponent} from '../sonde/sonde.component';
 })
 export class CelluleComponent extends ConteneurComponent {
 
-  @Input() id : number = 6;
-  @Input() nbSonde : number = 7;
-  @Input() temperature : number = 8;
+  @Input() id : number;
+  @Input() nbSonde : number;
+  @Input() temperature : number;
   @Input() lotCereale : LotCerealesComponent;
   @Input() sonde : SondeComponent;
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LotService } from './services/lot.service';
 import { StockageService } from './services/stockage.service';
+import { SiloComponent } from './silo/silo.component';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +13,14 @@ export class AppComponent implements OnInit {
   //stockageService : StockageService;// = new StockageService();
   lots : any[];
   camions : any[];
-  silos : any[];
+  silo : SiloComponent;
   //index : number;
 
   constructor (private lotService : LotService, private stockageService : StockageService)
   {
     this.lots = this.lotService.lotRecup;
     this.camions = this.lotService.camions;
-    this.silos = this.stockageService.silos;
-    console.log(this.silos[0].listeCellule[0].id);
-    this.silos[0].listeCellule[0].id = 10;
-    console.log(this.silos[0].listeCellule[0].id);
+    this.silo = this.stockageService.silo;
   }
 
   ngOnInit()
