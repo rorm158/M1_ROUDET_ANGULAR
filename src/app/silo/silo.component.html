@@ -8,6 +8,7 @@
         <td>Nb sondes</td>
         <td>Température</td>
         <td>Céréales contenues</td>
+        <td>Cliquer</td>
     </tr>
     <tr *ngFor = "let cellule of listeCellule">
         <td>
@@ -21,6 +22,10 @@
         </td>
         <td>
             {{cellule.type}}
+        </td>
+        <td>
+            <button class="btn btn-success"
+                  (click)="cellule.setTemperature(5)">Ajuster</button>
         </td>
     </tr>
 </table>
