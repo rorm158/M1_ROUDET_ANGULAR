@@ -16,6 +16,7 @@ import { LotViewComponent } from './lot-view/lot-view.component';
 import { FormsModule } from '@angular/forms';
 import { StockageService } from './services/stockage.service';
 import { Routes,RouterModule } from '@angular/router';
+import { AccidentComponent } from './accident/accident.component';
 
 const appRoutes: Routes = [
   { path: 'lots', component: LotViewComponent },
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     CelluleComponent,
     SondeComponent,
     SiloComponent,
-    LotViewComponent
+    LotViewComponent,
+    AccidentComponent
   ],
   imports: [
     BrowserModule,

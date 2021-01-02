@@ -33,7 +33,7 @@ export class ConvoyeurComponent implements OnInit {
   public deposerLotCereale()
   {
     this.numLotCereale = null;
-    this.bloqueConvoyeur();
+    this.bloquerConvoyeur();
   }
   
   
@@ -42,7 +42,7 @@ export class ConvoyeurComponent implements OnInit {
     this.marche = true;
   }
 
-  public bloqueConvoyeur()
+  public bloquerConvoyeur()
   {
 		this.marche = false;
   }
