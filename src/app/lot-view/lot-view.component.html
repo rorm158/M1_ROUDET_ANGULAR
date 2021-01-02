@@ -11,5 +11,7 @@
   <app-lot-cereales *ngFor="let lot of lots; let i = index"
                     [numLot]="i"
                     [poids]="lot.poids"
-                    [index]="i"></app-lot-cereales>
+                    [index]="i"
+                    [analyse]="lot.poids">
+  </app-lot-cereales>
 </div>

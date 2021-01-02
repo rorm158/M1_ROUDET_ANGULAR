@@ -6,6 +6,7 @@ import { FossesReceptionComponent } from '../fosses-reception/fosses-reception.c
 export class LotService
 {
     lots: Array<LotCerealesComponent> = new Array<LotCerealesComponent>();
+    lotRecup: Array<LotCerealesComponent> = new Array<LotCerealesComponent>();
     camions: Array<CamionComponent> = new Array<CamionComponent>();
     fosses : FossesReceptionComponent;
 
@@ -43,9 +44,11 @@ export class LotService
     ramenerLot()
     {
         this.lots.push(new LotCerealesComponent());
+        this.lotRecup.push(new LotCerealesComponent());
         let i : number = 0;
-        this.lots.forEach(function(lot){
+        this.lotRecup.forEach(function(lot){
             lot.setNumLot(i);
+            lot.set();
             i++;
         });
     }

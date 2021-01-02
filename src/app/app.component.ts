@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
 
   constructor (private lotService : LotService)
   {
-    this.lots = this.lotService.lots;
+    this.lots = this.lotService.lotRecup;
     this.camions = this.lotService.camions;
   }
 

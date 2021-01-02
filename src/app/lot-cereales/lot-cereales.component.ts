@@ -14,10 +14,10 @@ export class LotCerealesComponent implements OnInit {
   tauxHumidite : String; //= Math.floor(Math.random() * 100).toString();
   qualite : String = "Mauvaise";
   origine : String = "Paris";
-  analyse : boolean = false;
-  nettoye : boolean = false;
+  @Input() analyse : boolean = false;
+  @Input() nettoye : boolean = false;
   @Input() index : number;
-  ajoute : boolean = false;
+  @Input() ajoute : boolean = false;
   
   constructor() { 
   }
@@ -28,6 +28,16 @@ export class LotCerealesComponent implements OnInit {
   setNumLot(num : number)
   {
     this.numLot = num.toString();
+  }
+
+  set()
+  {
+    this.poids = (Math.floor(Math.random() * 30) + 5).toString();
+    this.tauxHumidite = "15";
+    this.analyse = true;
+    this.nettoye = true;
+    this.ajoute = true;
+    this.qualite = "Bonne";
   }
 
   analyser()
