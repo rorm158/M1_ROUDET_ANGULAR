@@ -19,6 +19,7 @@ import { Routes,RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: 'lots', component: LotViewComponent },
+  { path: 'cellule', component: CelluleComponent },
   { path: '', component: LotViewComponent }
 ];
 
@@ -37,8 +38,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     LotService,
