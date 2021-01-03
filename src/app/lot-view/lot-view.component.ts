@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
 import { LotService } from '../services/lot.service';
 
 @Component({
@@ -49,6 +50,7 @@ export class LotViewComponent implements OnInit {
   add(i:number)
   {
     this.lotService.add(i);
+    AppComponent.app.maj();
   }
 
   check()

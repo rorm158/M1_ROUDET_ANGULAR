@@ -11,12 +11,12 @@ import {SondeComponent} from '../sonde/sonde.component';
 })
 export class CelluleComponent extends ConteneurComponent {
 
-  @Input() id : number;
-  @Input() nbSonde : number;
-  @Input() temperature : number;
-  @Input() lotCereale : LotCerealesComponent;
-  @Input() sonde : SondeComponent;
-  @Input() type : string;
+  @Input() id : number = -1;
+  @Input() nbSonde : number = 1;
+  @Input() temperature : number = 15;
+  @Input() lotCereale : LotCerealesComponent = null;
+  @Input() sonde : SondeComponent = new SondeComponent();
+  @Input() type : string = "Vide";
   @Input() etat : string = "OK";
 
   constructor() { 
@@ -92,11 +92,17 @@ export class CelluleComponent extends ConteneurComponent {
   }
 
   public setLotCereale(_lotCereale:LotCerealesComponent) : void{
+    //console.log("ajout de " + this.lotCereale != null ? this.lotCereale.type : "vide");
+    console.log("ajout cereale");
     this.lotCereale = _lotCereale;
-    if(_lotCereale == null)
+    if(_lotCereale == null){
       this.typeCereale = "Vide";
-    else
+      this.type = "Vide";
+    }
+    else{
       this.typeCereale = this.lotCereale.type.toString();
+      this.type = this.lotCereale.type.toString();
+    }
   }
 
   public setSondes(_sonde:SondeComponent) : void{

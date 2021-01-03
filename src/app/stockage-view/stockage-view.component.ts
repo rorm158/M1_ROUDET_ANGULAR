@@ -10,15 +10,22 @@ import { SiloComponent } from '../silo/silo.component';
 })
 export class StockageViewComponent implements OnInit {
   silo : SiloComponent;
-  siloSubscription : Subscription;
+  //siloSubscription : Subscription;
 
-  constructor(private stockageService : StockageService) { }
+  constructor(private stockageService : StockageService) { 
+    this.silo = this.stockageService.silo;
+  }
 
   ngOnInit(): void {
-    this.siloSubscription = this.stockageService.siloSubject.subscribe((silo : SiloComponent) => {
+    /*this.siloSubscription = this.stockageService.siloSubject.subscribe((silo : SiloComponent) => {
       this.silo = silo;
     });
-    this.stockageService.emitSiloSubject();
+    this.stockageService.emitSiloSubject();*/
+  }
+
+  check(){
+    for(var i:number = 0; i < 10; i++)
+      console.log(this.stockageService.silo.listeCellule[i].getLotCereales());
   }
 
 }

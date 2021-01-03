@@ -13,8 +13,8 @@ export class SiloComponent implements OnInit {
   //@Input() listeCellule : Array<CelluleComponent>;
   @Input() listeCellule: Array<CelluleComponent> = new Array<CelluleComponent>(); //RAJOUT
   listeSonde : Array<SondeComponent> = new Array<SondeComponent>();
-  nbCellule : number;
-  @Input() idSilo : number;
+  nbCellule : number = 10;
+  @Input() idSilo : number = 0;
 
   constructor() { 
     //this.listeCellule.push(new CelluleComponent()); //RAJOUT
@@ -24,6 +24,8 @@ export class SiloComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //this.initSilo(10, 0);
+    //console.log(this.listeCellule[0].temperature);
   }
 
   //Initialisation du silo
@@ -45,9 +47,15 @@ export class SiloComponent implements OnInit {
     }
 
     //this.setListeCellule(cellules);
-    console.log("MEOWWW " + this.listeCellule[0].id);
+    //console.log("MEOWWW " + this.listeCellule[0].id);
     this.setNbCellule(_nbCellule);
     this.setSilo(_idSilo);
+  }
+
+  public Ventiler(){
+    this.listeCellule.forEach(function (cellule){
+      cellule.temperature = 20;
+    });
   }
 
   //Ajout d'un lot de céréales dans le silo (renvoi true si l'ajout a été réalisé)
