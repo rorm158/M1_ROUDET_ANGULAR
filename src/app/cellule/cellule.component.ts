@@ -18,6 +18,10 @@ export class CelluleComponent extends ConteneurComponent {
   @Input() sonde : SondeComponent = new SondeComponent();
   @Input() type : string = "Vide";
   @Input() etat : string = "OK";
+  @Input() poids : string = "";
+  @Input() origine : string = "";
+  @Input() qualite : string = "";
+  @Input() taux_humidite : string = "";
 
   constructor() { 
     super();
@@ -98,10 +102,18 @@ export class CelluleComponent extends ConteneurComponent {
     if(_lotCereale == null){
       this.typeCereale = "Vide";
       this.type = "Vide";
+      this.origine = "";
+      this.qualite = "";
+      this.taux_humidite = "";
+      this.poids = "";
     }
     else{
       this.typeCereale = this.lotCereale.type.toString();
       this.type = this.lotCereale.type.toString();
+      this.origine = this.lotCereale.origine.toString();
+      this.qualite = this.lotCereale.qualite.toString();
+      this.taux_humidite = this.lotCereale.tauxHumidite.toString();
+      this.poids = this.lotCereale.poids.toString();
     }
   }
 

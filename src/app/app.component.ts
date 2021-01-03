@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { LotCerealesComponent } from './lot-cereales/lot-cereales.component';
 import { LotService } from './services/lot.service';
 import { StockageService } from './services/stockage.service';
 import { SiloComponent } from './silo/silo.component';
@@ -39,10 +40,14 @@ export class AppComponent implements OnInit {
     console.log(this.lots);
   }
 
-  maj() : void
+  /*maj() : void
   {
     console.log("maj");
-    this.stockageService.ActualiserLots(this.lots);
+    this.lotService.ActualiserLots(this.lots);
+  }*/
+
+  ajouterCereales(lot:LotCerealesComponent) : void{
+    this.lotService.ajouterLotCereales(lot);
   }
 
   /*rendreDispo()

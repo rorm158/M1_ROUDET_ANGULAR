@@ -10,7 +10,10 @@
         <td>Nb sondes</td>
         <td>Température</td>
         <td>Céréales contenues</td>
-        <td>Cliquer</td>
+        <td>Poids</td>
+        <td>Origine</td>
+        <td>Qualité</td>
+        <td>Taux d'humidité</td>
         <td>Cliquer</td>
         <td>Cliquer</td>
         <td>État</td>
@@ -29,12 +32,20 @@
             {{cellule.type}}
         </td>
         <td>
-            <button class="btn btn-success"
-                  (click)="cellule.Ventiler()">Ventiler</button>
+            {{cellule.poids}}
+        </td>
+        <td>
+            {{cellule.origine}}
+        </td>
+        <td>
+            {{cellule.qualite}}
+        </td>
+        <td>
+            {{cellule.taux_humidite}}
         </td>
         <td>
             <button class="btn btn-success"
-                  (click)="cellule.Ventiler()">Ventiler 2</button>
+                  (click)="cellule.Ventiler()">Ventiler</button>
         </td>
         <td>
             <button class="btn btn-success"

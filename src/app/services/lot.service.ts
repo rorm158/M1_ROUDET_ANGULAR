@@ -65,15 +65,15 @@ export class LotService
         this.lots[i].clean(); 
     }*/
 
-    //Met à jour les lots contenus dans le stockage
-    public ActualiserLots(lotCereales : Array<LotCerealesComponent>) : void {
+    //Met à jour les lots contenus dans le stockage (Obsolète)
+    /*public ActualiserLots(lotCereales : Array<LotCerealesComponent>) : void {
         for(var i = 0; i < lotCereales.length; i++){
             if(lotCereales[i]){
                 this.silo.listeCellule[i].setLotCereale(lotCereales[i]);
                 console.log(this.silo.listeCellule[i]);
             }
         }
-    }
+    }*/
 
     //Ajoute un lot de céréales dans l'un des silos existants (renvoie true si l'ajout a bien été effectué)
     public ajouterLotCereales(lotCereale : LotCerealesComponent) : Boolean{
