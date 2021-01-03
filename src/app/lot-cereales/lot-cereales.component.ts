@@ -9,15 +9,14 @@ import { CamionComponent } from '../camion/camion.component';
 export class LotCerealesComponent implements OnInit {
 
   @Input() numLot : String ;//= Math.floor(Math.random() * 10).toString();
-  type : String = "Nesquik";
-  poids : String; //= (Math.floor(Math.random() * 30) + 5).toString();
-  tauxHumidite : String; //= Math.floor(Math.random() * 100).toString();
-  qualite : String = "Mauvaise";
-  origine : String = "Paris";
+  @Input() type : String = "Nesquik";
+  @Input() poids : String; //= (Math.floor(Math.random() * 30) + 5).toString();
+  @Input() tauxHumidite : String; //= Math.floor(Math.random() * 100).toString();
+  @Input() qualite : String;
+  @Input() origine : String = "Paris";
   @Input() analyse : boolean = false;
   @Input() nettoye : boolean = false;
   @Input() index : number;
-  @Input() ajoute : boolean = false;
   
   constructor() { 
   }
@@ -30,21 +29,12 @@ export class LotCerealesComponent implements OnInit {
     this.numLot = num.toString();
   }
 
-  set()
-  {
-    this.poids = (Math.floor(Math.random() * 30) + 5).toString();
-    this.tauxHumidite = "15";
-    this.analyse = true;
-    this.nettoye = true;
-    this.ajoute = true;
-    this.qualite = "Bonne";
-  }
-
   analyser()
   {
     this.poids = (Math.floor(Math.random() * 30) + 5).toString();
     this.tauxHumidite = Math.floor(Math.random() * 100).toString();
     this.analyse = true;
+    this.qualite = "Mauvaise";
   }
 
   clean()
@@ -52,10 +42,5 @@ export class LotCerealesComponent implements OnInit {
     this.tauxHumidite = "15";
     this.qualite = "Bonne";
     this.nettoye = true;
-  }
-
-  add()
-  {
-    this.ajoute = true;
   }
 }

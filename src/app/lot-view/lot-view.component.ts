@@ -17,6 +17,11 @@ export class LotViewComponent implements OnInit {
     this.camions = this.lotService.camions;
   }
 
+  refresh()
+  {
+    this.lots = this.lotService.lots;
+  }
+
   ngOnInit(): void {
   }
 
@@ -39,5 +44,15 @@ export class LotViewComponent implements OnInit {
   {
     this.lotService.ramenerLot();
     this.rendreNonDispo();
+  }
+
+  add(i:number)
+  {
+    this.lotService.add(i);
+  }
+
+  check()
+  {
+    console.log(this.lots);
   }
 }

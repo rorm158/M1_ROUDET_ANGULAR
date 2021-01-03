@@ -8,10 +8,55 @@
   <button class="btn btn-success"
               [disabled]="!camionDispo()"
               (click)="ramenerLot()">Ajouter lot céréales</button>
-  <app-lot-cereales *ngFor="let lot of lots; let i = index"
+  <!--<app-lot-cereales *ngFor="let lot of lots; let i = index"
                     [numLot]="i"
                     [poids]="lot.poids"
                     [index]="i"
                     [analyse]="lot.poids">
-  </app-lot-cereales>
+  </app-lot-cereales>-->
+  <table>
+    <tr>
+        <td>NumLot</td>
+        <td>Type</td>
+        <td>Poids</td>
+        <td>TauxHumidité</td>
+        <td>Qualité</td>
+        <td>Origine</td>
+    </tr>
+    <tr *ngFor = "let lot of lots; let i = index">
+        <td>
+            {{lot.numLot}}
+        </td>
+        <td>
+            {{lot.type}}
+        </td>
+        <td>
+            {{lot.poids}}
+        </td>
+        <td>
+            {{lot.tauxHumidite}}
+        </td>
+        <td>
+          {{lot.qualite}}
+        </td>
+        <td>
+          {{lot.origine}}
+        </td>
+        <td>
+          <button class="btn btn-sm btn-success"
+          [disabled]="lot.analyse"
+          (click)="lot.analyser()">Analyser</button>
+        </td>
+        <td *ngIf="lot.analyse">
+          <button class="btn btn-sm btn-success"
+          (click)="lot.clean()">Nettoyer</button>
+        </td>
+        <td *ngIf="lot.nettoye">
+          <button class="btn btn-sm btn-success"
+          (click)="add(i)">Ajouter</button>
+        </td>
+    </tr>
+</table>
+  <button class="btn btn-success"
+              (click)="check()">Vérifier</button>
 </div>
