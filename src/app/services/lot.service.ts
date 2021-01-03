@@ -57,7 +57,9 @@ export class LotService
     add(i:number)
     {
         this.lotRecup.push(this.lots[i]);
-        console.log(this.lotRecup);
+        /*let tamp = this.lots[i];
+        this.lots.splice(i,1);
+        this.lotRecup.push(tamp);*/
     }
 
     /*clean(i : number)
