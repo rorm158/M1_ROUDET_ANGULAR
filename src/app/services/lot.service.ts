@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LotCerealesComponent } from '../lot-cereales/lot-cereales.component';
 import { CamionComponent } from '../camion/camion.component';
 import { FossesReceptionComponent } from '../fosses-reception/fosses-reception.component';
@@ -9,6 +9,7 @@ export class LotService
     lotRecup: Array<LotCerealesComponent> = new Array<LotCerealesComponent>();
     camions: Array<CamionComponent> = new Array<CamionComponent>();
     fosses : FossesReceptionComponent;
+    test : number = 0;
 
     constructor()
     {

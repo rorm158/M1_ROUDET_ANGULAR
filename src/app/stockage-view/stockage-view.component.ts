@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { StockageService } from '../services/stockage.service';
+import { LotService } from '../services/lot.service';
 import { SiloComponent } from '../silo/silo.component';
 
 @Component({
@@ -12,8 +13,8 @@ export class StockageViewComponent implements OnInit {
   silo : SiloComponent;
   //siloSubscription : Subscription;
 
-  constructor(private stockageService : StockageService) { 
-    this.silo = this.stockageService.silo;
+  constructor(private lotService : LotService) { 
+    //this.silo = this.stockageService.silo;
   }
 
   ngOnInit(): void {
@@ -24,8 +25,14 @@ export class StockageViewComponent implements OnInit {
   }
 
   check(){
-    for(var i:number = 0; i < 10; i++)
-      console.log(this.stockageService.silo.listeCellule[i].getLotCereales());
+    /*for(var i:number = 0; i < 10; i++)
+      console.log(this.stockageService.silo.listeCellule[i].getLotCereales());*/
+    this.lotService.test++;
+  }
+
+  getCheck()
+  {
+    return this.lotService.test;
   }
 
 }
