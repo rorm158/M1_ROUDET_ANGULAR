@@ -1,5 +1,50 @@
-<app-silo>
-</app-silo>
+<!--<app-silo>
+</app-silo>-->
+<table>
+    <tr>
+        <th>Silo</th>
+
+    </tr>
+    <tr>
+        <td>Num cellule</td>
+        <td>Nb sondes</td>
+        <td>Température</td>
+        <td>Céréales contenues</td>
+        <td>Cliquer</td>
+        <td>Cliquer</td>
+        <td>Cliquer</td>
+        <td>État</td>
+    </tr>
+    <tr *ngFor = "let cellule of silo.listeCellule">
+        <td>
+            {{cellule.id}}
+        </td>
+        <td>
+            {{cellule.nbSonde}}
+        </td>
+        <td>
+            {{cellule.temperature}}
+        </td>
+        <td>
+            {{cellule.type}}
+        </td>
+        <td>
+            <button class="btn btn-success"
+                  (click)="cellule.Ventiler()">Ventiler</button>
+        </td>
+        <td>
+            <button class="btn btn-success"
+                  (click)="cellule.Ventiler()">Ventiler 2</button>
+        </td>
+        <td>
+            <button class="btn btn-success"
+                  (click)="cellule.SimulerAccident()">Simuler accident</button>
+        </td>
+        <td>
+            {{cellule.etat}}
+        </td>
+    </tr>
+</table>
 <button class="btn btn-success"
                   (click)="check()">Test</button>
 <p>{{getCheck()}}</p>

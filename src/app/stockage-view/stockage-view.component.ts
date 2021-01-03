@@ -14,7 +14,7 @@ export class StockageViewComponent implements OnInit {
   //siloSubscription : Subscription;
 
   constructor(private lotService : LotService) { 
-    //this.silo = this.stockageService.silo;
+    this.silo = this.lotService.silo;
   }
 
   ngOnInit(): void {
