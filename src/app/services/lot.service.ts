@@ -3,6 +3,7 @@ import { LotCerealesComponent } from '../lot-cereales/lot-cereales.component';
 import { CamionComponent } from '../camion/camion.component';
 import { FossesReceptionComponent } from '../fosses-reception/fosses-reception.component';
 import { SiloComponent } from '../silo/silo.component';
+import { InvokeFunctionExpr } from '@angular/compiler';
 
 export class LotService
 {
@@ -16,6 +17,7 @@ export class LotService
     constructor()
     {
         this.camions.push(new CamionComponent());
+        setTimeout(() => {this.VentilationAuto()}, 1000);   //Ventilation automatique (toutes les 1 seconde)
     }
 
     camionDispo()
@@ -76,6 +78,16 @@ export class LotService
             }
         }
     }*/
+
+    //Ventile toutes les cellules (fonction se rappelant toutes le 1s)
+    VentilationAuto(){
+        if(this.silo != null){
+            this.silo.listeCellule.forEach(function(cellule){
+                cellule.Ventiler();
+            });
+        }
+        setTimeout(() => {this.VentilationAuto()}, 1000);
+    }
 
     //Ajoute un lot de céréales dans l'un des silos existants (renvoie true si l'ajout a bien été effectué)
     public ajouterLotCereales(lotCereale : LotCerealesComponent) : Boolean{
