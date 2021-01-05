@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 body{
-background-color:lightgray;
+background-color:#F7F7F7;
 }
 button:disabled {
     opacity: .35 !important;
-    background-color :lightgray !important;
+    background-color :#F7F7F7 !important;
 }
