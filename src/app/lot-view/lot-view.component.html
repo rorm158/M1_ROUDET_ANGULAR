@@ -1,8 +1,12 @@
-<p>Camions de livraison</p>
-<app-camion *ngFor="let camion of camions"
+<div class="container-camions">
+  <p>Camions de livraison</p>
+  <app-camion *ngFor="let camion of camions"
             [action] = "camion.action"></app-camion>
-<button class="btn btn-success"
+  <button class="btn btn-success"
               (click)="rendreDispo()">Rendre disponible</button>
+</div>
+
+<div class="container-lots">
 <p>Arrivée des lots de céréales</p>
 <div>
   <button class="btn btn-success"
@@ -91,4 +95,6 @@
 
   <button class="btn btn-success"
               (click)="check()">Vérifier</button>
+</div>
+
 </div>
