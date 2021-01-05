@@ -1,61 +1,90 @@
 <!--<app-silo>
 </app-silo>-->
-<table>
-    <tr>
-        <th>Silo</th>
+<a>SILO</a>
 
-    </tr>
-    <tr>
-        <td>Num cellule</td>
-        <td>Nb sondes</td>
-        <td>Température</td>
-        <td>Céréales contenues</td>
-        <td>Poids</td>
-        <td>Origine</td>
-        <td>Qualité</td>
-        <td>Taux d'humidité</td>
-        <td>Cliquer</td>
-        <td>Cliquer</td>
-        <td>État</td>
-    </tr>
-    <tr *ngFor = "let cellule of silo.listeCellule">
-        <td>
-            {{cellule.id}}
-        </td>
-        <td>
-            {{cellule.nbSonde}}
-        </td>
-        <td>
-            {{cellule.temperature}}
-        </td>
-        <td>
-            {{cellule.type}}
-        </td>
-        <td>
-            {{cellule.poids}}
-        </td>
-        <td>
-            {{cellule.origine}}
-        </td>
-        <td>
-            {{cellule.qualite}}
-        </td>
-        <td>
-            {{cellule.taux_humidite}}
-        </td>
-        <td>
-            <button class="btn btn-success"
-                  (click)="cellule.Ventiler()">Ventiler</button>
-        </td>
-        <td>
-            <button class="btn btn-success"
+<div class="container">
+
+    <div class="table">
+
+        <div class="table-header">
+
+            <div class="header">
+                <a>Num cellule</a>
+            </div>
+            <div class="header">
+                <a>Nb sondes</a>
+            </div>
+            <div class="header">
+                <a>Température</a>
+            </div>
+            <div class="header">
+                <a>Céréales contenues</a>
+            </div>
+            <div class="header">
+                <a>Poids</a>
+            </div>
+            <div class="header">
+                <a>Origine</a>
+            </div>
+            <div class="header">
+                <a>Qualité</a>
+            </div>
+            <div class="header">
+                <a>Taux d'humidité</a>
+            </div>
+            <div class="header">
+                <a>Cliquer</a>
+            </div>
+            <div class="header">
+                <a>Cliquer</a>
+            </div>
+            <div class="header">
+                <a>État</a>
+            </div>
+        </div>
+        
+        <div class="table-row"  *ngFor = "let cellule of silo.listeCellule">
+            <div class="data">
+                {{cellule.id}}
+            </div>
+            <div class="data">
+                {{cellule.nbSonde}}
+            </div>
+            <div class="data">
+                {{cellule.temperature}}
+            </div>
+            <div class="data">
+                {{cellule.type}}
+            </div>
+            <div class="data">
+                {{cellule.poids}}
+            </div>
+            <div class="data">
+                {{cellule.origine}}
+            </div>
+            <div class="data">
+                {{cellule.qualite}}
+            </div>
+            <div class="data">
+                {{cellule.taux_humidite}}
+            </div>
+            <div class="data">
+                <button class="btn btn-success"
+                (click)="cellule.Ventiler()">Ventiler</button>
+            </div>
+            <div class="data">
+                <button class="btn btn-success"
                   (click)="cellule.SimulerAccident()">Simuler accident</button>
-        </td>
-        <td>
-            {{cellule.etat}}
-        </td>
-    </tr>
-</table>
+            </div>
+            <div class="data">
+                {{cellule.etat}}
+            </div>
+        </div>
+
+    </div>
+    
+</div>
+
 <button class="btn btn-success"
                   (click)="check()">Test</button>
 <p>{{getCheck()}}</p>
