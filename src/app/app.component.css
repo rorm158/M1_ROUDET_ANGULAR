@@ -4,6 +4,12 @@
     font-family : Arial;
 }
 
+.navbar .nonclickable{
+    overflow : hidden;
+    background-color : #F7F7F7;
+    font-family : Arial;
+}
+
 .navbar a{
     float : left;
     font-size : 30px;
@@ -14,10 +20,16 @@
     width:30%
 }
 
+.navbar #docOc{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color : black;
+    font-weight: bolder;
+}
+
 .navbar a:hover{
     background-color :slategray;
 }
 
 .navbar .nonclickable:hover{
-    background-color:#333333;
+    background-color:#F7F7F7;
 }

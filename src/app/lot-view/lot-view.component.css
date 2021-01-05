@@ -50,7 +50,7 @@
 }
 
 .container-camions{
-    background-color:darkslategray;
+    background-color:rgb(11, 175, 175);
     text-align : center;
     padding : 10px;
     margin-top: 20px;
@@ -59,6 +59,9 @@
 .container-camions p {
     color: white;
     text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container-camions button{
@@ -67,7 +70,7 @@
 }
 
 .container-lots{
-    background-color:darkslategray;
+    background-color:rgb(11, 175, 175);
     text-align : center;
     padding : 10px;
     margin-top: 20px;
@@ -76,6 +79,9 @@
 .container-lots p {
     color: white;
     text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container-lots button{

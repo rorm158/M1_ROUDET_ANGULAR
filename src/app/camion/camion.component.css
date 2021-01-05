@@ -17,9 +17,13 @@
 .table-header {
     display : flex;
     width : 100%;
-    background : #999999;
+    background : #1f1f1f;
     padding : 10px;
     align-items:center;
+}
+
+.table-header a{
+    color: whitesmoke;
 }
 
 .table-row {
@@ -31,6 +35,10 @@
 
 .table-row:nth-of-type(even) {
     background : #EEEEEE;
+}
+
+.table-row:nth-of-type(odd) {
+    background : #999999;
 }
 
 .data, .header{
