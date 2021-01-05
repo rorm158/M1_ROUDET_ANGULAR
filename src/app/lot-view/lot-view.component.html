@@ -76,15 +76,17 @@
             </div>
             <div class="data">
               <button class="btn btn-sm btn-success"
-               [disabled]="lot.analyse"
+              [disabled]="lot.ajoute"
                (click)="lot.analyser()">Analyser</button>
             </div>
-            <div class="data" *ngIf="lot.analyse">
+            <div class="data">
               <button class="btn btn-sm btn-success"
+              [disabled]="!lot.analyse || lot.ajoute"
               (click)="lot.clean()">Nettoyer</button>
             </div>
-            <div class="data" *ngIf="lot.nettoye">
+            <div class="data">
               <button class="btn btn-sm btn-success"
+              [disabled]="!lot.nettoye || lot.ajoute"
               (click)="add(i)">Ajouter</button>
             </div>
 

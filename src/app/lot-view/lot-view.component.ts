@@ -50,6 +50,7 @@ export class LotViewComponent implements OnInit {
   add(i:number)
   {
     this.lotService.add(i);
+    this.lots[i].add();
     AppComponent.app.ajouterCereales(this.lots[i]);
   }
 
