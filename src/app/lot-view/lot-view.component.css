@@ -19,12 +19,14 @@
     width : 100%;
     background : #999999;
     padding : 10px;
+    align-items:center;
 }
 
 .table-row {
     display : flex;
     width : 100%;
     padding : 10px;
+    align-items:center;
 }
 
 .table-row:nth-of-type(even) {
