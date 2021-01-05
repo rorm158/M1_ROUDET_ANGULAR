@@ -83,7 +83,7 @@ export class SiloComponent implements OnInit {
     
     this.listeCellule.forEach(function (cellule){
       if(!ajout){
-        if(!cellule.estPleine()){
+        if(!cellule.estPleine() && !cellule.endommage){
           ajout = true;
           cellule.setLotCereale(lotCereale);
         }

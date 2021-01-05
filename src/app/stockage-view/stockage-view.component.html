@@ -71,11 +71,11 @@
                 {{cellule.taux_humidite}}
             </div>
             <div class="data">
-                <button class="btn btn-success"
+                <button [disabled]="cellule.endommage" class="btn btn-success"
                 (click)="cellule.Ventiler()">Ventiler</button>
             </div>
             <div class="data">
-                <button class="btn btn-success"
+                <button [disabled]="cellule.endommage" class="btn btn-success"
                   (click)="cellule.SimulerAccident()">Simuler accident</button>
             </div>
             <div class="data">

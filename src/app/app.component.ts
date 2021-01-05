@@ -46,8 +46,8 @@ export class AppComponent implements OnInit {
     this.lotService.ActualiserLots(this.lots);
   }*/
 
-  ajouterCereales(lot:LotCerealesComponent) : void{
-    this.lotService.ajouterLotCereales(lot);
+  ajouterCereales(lot:LotCerealesComponent) : Boolean {
+    return this.lotService.ajouterLotCereales(lot);
   }
 
   /*rendreDispo()

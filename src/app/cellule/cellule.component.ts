@@ -22,6 +22,7 @@ export class CelluleComponent extends ConteneurComponent {
   @Input() origine : string = "";
   @Input() qualite : string = "";
   @Input() taux_humidite : string = "";
+  @Input() endommage : boolean = false;
 
   constructor() { 
     super();
@@ -32,11 +33,13 @@ export class CelluleComponent extends ConteneurComponent {
   }
 
   public Ventiler() : void {
-    if(this.temperature > 10)
-      this.temperature--;
-    else if(this.temperature < 10)
-      this.temperature++;
-    this.actualiserEtat();
+    if(!this.endommage){
+      if(this.temperature > 10)
+        this.temperature--;
+      else if(this.temperature < 10)
+        this.temperature++;
+      this.actualiserEtat();
+    }
   }
 
   public SimulerAccident() : void{
@@ -56,6 +59,8 @@ export class CelluleComponent extends ConteneurComponent {
       this.etat = "Température faible";
     else 
       this.etat = "À réchauffer!";
+    if(this.etat == "Incendie")
+      this.endommage = true;
   }
 
   public initCellule(_id:number, _nbSonde:number, _temperature:number, _lotCereale:LotCerealesComponent, _sonde:SondeComponent) : void{
@@ -97,23 +102,25 @@ export class CelluleComponent extends ConteneurComponent {
 
   public setLotCereale(_lotCereale:LotCerealesComponent) : void{
     //console.log("ajout de " + this.lotCereale != null ? this.lotCereale.type : "vide");
-    console.log("ajout cereale");
-    this.lotCereale = _lotCereale;
-    if(_lotCereale == null){
-      this.typeCereale = "Vide";
-      this.type = "Vide";
-      this.origine = "";
-      this.qualite = "";
-      this.taux_humidite = "";
-      this.poids = "";
-    }
-    else{
-      this.typeCereale = this.lotCereale.type.toString();
-      this.type = this.lotCereale.type.toString();
-      this.origine = this.lotCereale.origine.toString();
-      this.qualite = this.lotCereale.qualite.toString();
-      this.taux_humidite = this.lotCereale.tauxHumidite.toString();
-      this.poids = this.lotCereale.poids.toString();
+    if(!this.endommage){
+      console.log("ajout cereale");
+      this.lotCereale = _lotCereale;
+      if(_lotCereale == null){
+        this.typeCereale = "Vide";
+        this.type = "Vide";
+        this.origine = "";
+        this.qualite = "";
+        this.taux_humidite = "";
+        this.poids = "";
+      }
+      else{
+        this.typeCereale = this.lotCereale.type.toString();
+        this.type = this.lotCereale.type.toString();
+        this.origine = this.lotCereale.origine.toString();
+        this.qualite = this.lotCereale.qualite.toString();
+        this.taux_humidite = this.lotCereale.tauxHumidite.toString();
+        this.poids = this.lotCereale.poids.toString();
+      }
     }
   }
 
