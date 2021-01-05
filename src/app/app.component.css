@@ -11,8 +11,13 @@
     text-align : center;
     padding : 14px 16px;
     text-decoration : none;
+    width:30%
 }
 
 .navbar a:hover{
     background-color :slategray;
+}
+
+.navbar .nonclickable:hover{
+    background-color:#333333;
 }
