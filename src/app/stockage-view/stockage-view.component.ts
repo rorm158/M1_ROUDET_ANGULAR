@@ -30,6 +30,10 @@ export class StockageViewComponent implements OnInit {
     this.lotService.test++;
   }
 
+  getColor(){
+    return this.silo.getColor();
+  }
+
   getCheck()
   {
     return this.lotService.test;

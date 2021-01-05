@@ -52,6 +52,25 @@ export class SiloComponent implements OnInit {
     this.setSilo(_idSilo);
   }
 
+  public getColor() : String {
+    var etatMax = 0;
+    var couleur = "#39A842";
+    //couleur = "#D13321";
+
+    this.listeCellule.forEach(function (cellule){
+      if(cellule.etat == "Fortes températures" && etatMax <= 1)
+        etatMax = 1;
+      if(cellule.etat == "Incendie")
+        etatMax = 2;
+    });
+    if(etatMax == 1)
+      couleur = "#FF9F51";
+    if(etatMax == 2)
+      couleur = "#D13321";
+
+    return couleur;
+  }
+
   public Ventiler(){
     this.listeCellule.forEach(function (cellule){
       cellule.temperature = 20;
