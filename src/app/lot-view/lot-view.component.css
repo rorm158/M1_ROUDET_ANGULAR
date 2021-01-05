@@ -1,8 +1,42 @@
-table
-{
-    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+.container{
+    max-width : 1000px;
+    margin-right : auto;
+    margin-left : auto;
+    font-family :Cambria;
+    display : flex;
+    justify-content : center;
+    align-items : center;
 }
-td
-{
-    border: 1px solid black;
+
+.table{
+    width : 100%;
+    border : 2px solid;
+    padding-right : 20px;
 }
+
+.table-header {
+    display : flex;
+    width : 100%;
+    background : #999999;
+    padding : 10px;
+}
+
+.table-row {
+    display : flex;
+    width : 100%;
+    padding : 10px;
+}
+
+.table-row:nth-of-type(even) {
+    background : #EEEEEE;
+}
+
+.data, .header{
+    flex : 1 1 20%;
+    text-align : center;
+}
+
+.header{
+    text-transform : uppercase;
+}
+

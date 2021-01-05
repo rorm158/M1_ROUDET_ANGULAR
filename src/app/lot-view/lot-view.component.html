@@ -14,49 +14,81 @@
                     [index]="i"
                     [analyse]="lot.poids">
   </app-lot-cereales>-->
-  <table>
-    <tr>
-        <td>NumLot</td>
-        <td>Type</td>
-        <td>Poids</td>
-        <td>TauxHumidité</td>
-        <td>Qualité</td>
-        <td>Origine</td>
-    </tr>
-    <tr *ngFor = "let lot of lots; let i = index">
-        <td>
-            {{lot.numLot}}
-        </td>
-        <td>
-            {{lot.type}}
-        </td>
-        <td>
-            {{lot.poids}}
-        </td>
-        <td>
-            {{lot.tauxHumidite}}
-        </td>
-        <td>
-          {{lot.qualite}}
-        </td>
-        <td>
-          {{lot.origine}}
-        </td>
-        <td>
-          <button class="btn btn-sm btn-success"
-          [disabled]="lot.analyse"
-          (click)="lot.analyser()">Analyser</button>
-        </td>
-        <td *ngIf="lot.analyse">
-          <button class="btn btn-sm btn-success"
-          (click)="lot.clean()">Nettoyer</button>
-        </td>
-        <td *ngIf="lot.nettoye">
-          <button class="btn btn-sm btn-success"
-          (click)="add(i)">Ajouter</button>
-        </td>
-    </tr>
-</table>
+
+  <div class="container">
+
+    <div class="table">
+
+        <div class="table-header">
+
+            <div class="header">
+                <a>NumLot</a>
+            </div>
+            <div class="header">
+                <a>Type</a>
+            </div>
+            <div class="header">
+                <a>Poids</a>
+            </div>
+            <div class="header">
+                <a>TauxHumidité</a>
+          </div>
+          <div class="header">
+                <a>Qualité</a>
+          </div>
+          <div class="header">
+               <a>Origine</a>
+          </div>
+          <div class="header">
+            <a>Analyser</a>
+          </div>
+          <div class="header">
+            <a>Nettoyer</a>
+          </div>
+          <div class="header">
+            <a>Ajouter</a>
+          </div>
+        </div>
+        
+        <div class="table-row" *ngFor = "let lot of lots; let i = index">
+            <div class="data">
+              {{lot.numLot}}
+            </div>
+            <div class="data">
+              {{lot.type}}
+            </div>
+            <div class="data">
+              {{lot.poids}}
+            </div>
+            <div class="data">
+              {{lot.tauxHumidite}}
+            </div>
+            <div class="data">
+              {{lot.qualite}}
+            </div>
+            <div class="data">
+              {{lot.origine}}
+            </div>
+            <div class="data">
+              <button class="btn btn-sm btn-success"
+               [disabled]="lot.analyse"
+               (click)="lot.analyser()">Analyser</button>
+            </div>
+            <div class="data" *ngIf="lot.analyse">
+              <button class="btn btn-sm btn-success"
+              (click)="lot.clean()">Nettoyer</button>
+            </div>
+            <div class="data" *ngIf="lot.nettoye">
+              <button class="btn btn-sm btn-success"
+              (click)="add(i)">Ajouter</button>
+            </div>
+
+        </div>
+
+    </div>
+    
+</div>
+
   <button class="btn btn-success"
               (click)="check()">Vérifier</button>
 </div>
