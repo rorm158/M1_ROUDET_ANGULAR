@@ -59,8 +59,10 @@ export class CelluleComponent extends ConteneurComponent {
       this.etat = "Température faible";
     else 
       this.etat = "À réchauffer!";
-    if(this.etat == "Incendie")
+    if(this.etat == "Incendie"){
+      this.temperature = 100;
       this.endommage = true;
+    }
   }
 
   public initCellule(_id:number, _nbSonde:number, _temperature:number, _lotCereale:LotCerealesComponent, _sonde:SondeComponent) : void{
