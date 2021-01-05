@@ -32,10 +32,13 @@ export class LotCerealesComponent implements OnInit {
 
   analyser()
   {
-    this.poids = (Math.floor(Math.random() * 30) + 5).toString();
-    this.tauxHumidite = Math.floor(Math.random() * 100).toString();
-    this.analyse = true;
-    this.qualite = "Mauvaise";
+    if (!this.analyse)
+    {
+      this.poids = (Math.floor(Math.random() * 30) + 5).toString();
+      this.tauxHumidite = Math.floor(Math.random() * 100).toString();
+      this.analyse = true;
+      this.qualite = "Mauvaise";
+    }
   }
 
   clean()
