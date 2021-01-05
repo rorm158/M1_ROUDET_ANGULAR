@@ -1,5 +1,5 @@
 .container{
-    max-width : 1000px;
+    max-width : 90%;
     margin-right : auto;
     margin-left : auto;
     font-family :Cambria;
@@ -59,4 +59,12 @@
 .container-stockage button{
     margin: 10px;
     text-transform : uppercase;
+    background-color : #333333;
+    color :white;
+    font-family :Cambria;
+    border-radius : 15px 15px 15px 15px;
+}
+
+.container-stockage button:hover{
+background-color:slategray;
 }

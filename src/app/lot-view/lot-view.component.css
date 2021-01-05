@@ -78,3 +78,16 @@
     text-transform : uppercase;
 }
 
+.body button{
+    margin: 10px;
+    text-transform : uppercase;
+    background-color : #333333;
+    color :white;
+    font-family :Cambria;
+    border-radius : 15px 15px 15px 15px;
+}
+.body button:hover{
+background-color : slategray;
+}
+
+
