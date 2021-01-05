@@ -33,7 +33,7 @@
 }
 
 .table-row:nth-of-type(even) {
-    background : #EEEEEE;
+    background : #dadada;
 }
 
 .table-row:nth-of-type(odd) {
