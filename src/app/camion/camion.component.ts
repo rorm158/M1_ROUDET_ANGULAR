@@ -24,7 +24,10 @@ export class CamionComponent implements OnInit {
 
   getAction()
   {
-    return this.action;
+    let message : string = "Non disponible";
+    if (this.action)
+      message = "Disponible";
+    return message;
   }
 
   setAction(action : boolean)

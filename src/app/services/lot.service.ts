@@ -24,7 +24,7 @@ export class LotService
     {
         let dispo = false;
         this.camions.forEach(function(camion) {
-            if (camion.getAction())
+            if (camion.action)
             {
                 dispo = true;
             }
