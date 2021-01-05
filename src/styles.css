@@ -3,3 +3,7 @@
 body{
 background-color:lightgray;
 }
+button:disabled {
+    opacity: .35 !important;
+    background-color: rgb(221, 3, 3) !important;
+}
