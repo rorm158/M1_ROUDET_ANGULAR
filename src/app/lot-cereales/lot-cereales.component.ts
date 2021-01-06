@@ -8,18 +8,20 @@ import { CamionComponent } from '../camion/camion.component';
 })
 export class LotCerealesComponent implements OnInit {
 
-  @Input() numLot : String ;//= Math.floor(Math.random() * 10).toString();
+  @Input() numLot : String ;
   @Input() type : String = "Nesquik";
-  @Input() poids : String; //= (Math.floor(Math.random() * 30) + 5).toString();
-  @Input() tauxHumidite : String; //= Math.floor(Math.random() * 100).toString();
+  @Input() poids : String;
+  @Input() tauxHumidite : String;
   @Input() qualite : String;
   @Input() origine : String = "Paris";
   @Input() analyse : boolean = false;
   @Input() nettoye : boolean = false;
   @Input() ajoute : boolean = false;
   @Input() index : number;
+  types: string[] = ['Blé', 'Orge', 'Pois','Pois','Protéagineux','Colza'];
   
-  constructor() { 
+  constructor() {
+    this.type = this.types[Math.floor(Math.random() * 5)];
   }
 
   ngOnInit(): void {

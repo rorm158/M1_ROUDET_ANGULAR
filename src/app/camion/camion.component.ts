@@ -7,12 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CamionComponent implements OnInit {
 
-  plaque: string ="CS-009-NN";
+  plaque: string = "CS-009-MM";
 	plein: boolean;
 	@Input() typeCereale: string;
 	quantite: number;
 	destination: string;
-	@Input() action: boolean;
+  @Input() action: boolean;
 
   constructor() { 
     
