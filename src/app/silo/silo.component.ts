@@ -156,7 +156,7 @@ export class SiloComponent implements OnInit {
   public SimulerInsectes() : void{
     console.log("Simuler insectes");
     this.listeCellule.forEach(function (cellule){
-      if(cellule.lotCereale != null){
+      if(cellule.lotCereale != null && cellule.qualite != "Incendiés"){
         cellule.lotCereale.qualite = "Mauvaise";
         cellule.ActualiserLot();
       }
@@ -167,7 +167,7 @@ export class SiloComponent implements OnInit {
   public AppliquerInsecticide() : void{
     console.log("Insecticide");
     this.listeCellule.forEach(function (cellule){
-      if(cellule.lotCereale != null){
+      if(cellule.lotCereale != null && cellule.qualite != "Incendiés"){
         cellule.lotCereale.qualite = "Bonne";
         cellule.ActualiserLot();
       }

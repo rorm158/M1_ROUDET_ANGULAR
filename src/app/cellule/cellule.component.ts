@@ -62,6 +62,8 @@ export class CelluleComponent extends ConteneurComponent {
     if(this.etat == "Incendie"){
       this.temperature = 100;
       this.endommage = true;
+      this.qualite = "Incendiés";
+      this.lotCereale.qualite = "Incendiés";
     }
   }
 
