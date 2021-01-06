@@ -87,7 +87,11 @@
     
 </div>
 
-<button class="btn btn-success"
-                  (click)="check()">Test</button>
+<div class="insecte">
+    <button [disabled]="silo.presenceInsectes()" class="btn btn-success"
+                (click)="silo.SimulerInsectes()">Simuler insectes</button>
+    <button [disabled]="!silo.presenceInsectes()" class="btn btn-success"
+                (click)="silo.AppliquerInsecticide()">Insecticide</button>
+</div>
 
 </div>

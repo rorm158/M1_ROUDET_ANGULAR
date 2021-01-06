@@ -107,22 +107,26 @@ export class CelluleComponent extends ConteneurComponent {
     if(!this.endommage){
       console.log("ajout cereale");
       this.lotCereale = _lotCereale;
-      if(_lotCereale == null){
-        this.typeCereale = "Vide";
-        this.type = "Vide";
-        this.origine = "";
-        this.qualite = "";
-        this.taux_humidite = "";
-        this.poids = "";
-      }
-      else{
-        this.typeCereale = this.lotCereale.type.toString();
-        this.type = this.lotCereale.type.toString();
-        this.origine = this.lotCereale.origine.toString();
-        this.qualite = this.lotCereale.qualite.toString();
-        this.taux_humidite = this.lotCereale.tauxHumidite.toString();
-        this.poids = this.lotCereale.poids.toString();
-      }
+      this.ActualiserLot();
+    }
+  }
+
+  public ActualiserLot() : void{
+    if(this.lotCereale == null){
+      this.typeCereale = "Vide";
+      this.type = "Vide";
+      this.origine = "";
+      this.qualite = "";
+      this.taux_humidite = "";
+      this.poids = "";
+    }
+    else{
+      this.typeCereale = this.lotCereale.type.toString();
+      this.type = this.lotCereale.type.toString();
+      this.origine = this.lotCereale.origine.toString();
+      this.qualite = this.lotCereale.qualite.toString();
+      this.taux_humidite = this.lotCereale.tauxHumidite.toString();
+      this.poids = this.lotCereale.poids.toString();
     }
   }
 

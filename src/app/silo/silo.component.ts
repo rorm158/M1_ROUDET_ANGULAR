@@ -58,16 +58,20 @@ export class SiloComponent implements OnInit {
     //couleur = "#D13321";
 
     this.listeCellule.forEach(function (cellule){
-      if(cellule.etat == "Fortes températures" && etatMax <= 1)
+      if(cellule.qualite == "Mauvaise" && etatMax <= 1)
         etatMax = 1;
-      if(cellule.etat == "Incendie")
+      if(cellule.etat == "Fortes températures" && etatMax <= 2)
         etatMax = 2;
+      if(cellule.etat == "Incendie")
+        etatMax = 3;
     });
     if(etatMax == 1)
-      couleur = "#FF9F51";
+      couleur = "#994C00";
     if(etatMax == 2)
+      couleur = "#FF9F51";
+    if(etatMax == 3)
       couleur = "#D13321";
-
+    
     return couleur;
   }
 
@@ -134,6 +138,40 @@ export class SiloComponent implements OnInit {
 
   public setSilo(_idSilo : number) : void{
     this.idSilo = _idSilo;
+  }
+
+  public presenceInsectes() : Boolean{
+    var res : Boolean = false;
+    this.listeCellule.forEach(function (cellule){
+      if(cellule.lotCereale != null){
+        if(cellule.lotCereale.qualite == "Mauvaise")
+          res = true;
+      }
+    });
+    
+    return res;
+  }
+
+  //Simulation de la présence d'insectes (on considère ici que la présence d'insectes diminue la qualité des céréales)
+  public SimulerInsectes() : void{
+    console.log("Simuler insectes");
+    this.listeCellule.forEach(function (cellule){
+      if(cellule.lotCereale != null){
+        cellule.lotCereale.qualite = "Mauvaise";
+        cellule.ActualiserLot();
+      }
+    });
+  }
+
+  //On applique l'insecticide sur les cellules (cela revient à améliorer la qualité des céréales)
+  public AppliquerInsecticide() : void{
+    console.log("Insecticide");
+    this.listeCellule.forEach(function (cellule){
+      if(cellule.lotCereale != null){
+        cellule.lotCereale.qualite = "Bonne";
+        cellule.ActualiserLot();
+      }
+    });
   }
 
 }
