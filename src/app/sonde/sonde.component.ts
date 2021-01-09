@@ -8,16 +8,18 @@ import { CelluleComponent } from '../cellule/cellule.component';
 })
 export class SondeComponent implements OnInit {
 
-  private idSonde : number;
-  private cellule : CelluleComponent;
+  private idSonde : number; //ID de la sonde
+  private cellule : CelluleComponent; //Cellule correspondante
 
   constructor() { 
   }
 
+  //Ventile la cellule
   public Ventile() : void {
     this.cellule.Ventiler();
   }
 
+  //Déclenche l'alarme
   public DeclencheAlarme() : void {
 
   }
@@ -25,15 +27,18 @@ export class SondeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Initialisation
   public initSonde(_idSonde:number, _cellule : CelluleComponent) : void{
     this.setIdSonde(_idSonde);
     this.setCellules(_cellule);
   }
 
+  //Affecter l'id de la sonde
   public setIdSonde(_idSonde:number) : void{
     this.idSonde = _idSonde;
   }
 
+  //Affecte la cellule correspondante
   public setCellules(_cellule : CelluleComponent) : void{
     this.cellule = _cellule;
   }

@@ -22,10 +22,7 @@ export class AppComponent implements OnInit {
     this.lots = this.lotService.lotRecup;
     this.camions = this.lotService.camions;
     this.cellules = this.stockageService.silo.listeCellule;
-    //this.stockageService.silo.initSilo(10, 0);
     console.log("taille silo " + this.stockageService.silo.listeCellule.length);
-    //this.stockageService.ActualiserLots(this.lotService.lotRecup);
-    //console.log(this.stockageService.silo.listeCellule[0].type);
   }
 
   ngOnInit()

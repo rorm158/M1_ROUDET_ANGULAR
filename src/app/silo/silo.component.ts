@@ -10,30 +10,20 @@ import { SondeComponent } from '../sonde/sonde.component';
 })
 export class SiloComponent implements OnInit {
 
-  //@Input() listeCellule : Array<CelluleComponent>;
-  @Input() listeCellule: Array<CelluleComponent> = new Array<CelluleComponent>(); //RAJOUT
-  listeSonde : Array<SondeComponent> = new Array<SondeComponent>();
-  nbCellule : number = 10;
-  @Input() idSilo : number = 0;
+  @Input() listeCellule: Array<CelluleComponent> = new Array<CelluleComponent>(); //Liste de cellules
+  listeSonde : Array<SondeComponent> = new Array<SondeComponent>(); //Liste des sondes
+  nbCellule : number = 10;  //Nb max de cellules
+  @Input() idSilo : number = 0; //Id du silo
 
   constructor() { 
-    //this.listeCellule.push(new CelluleComponent()); //RAJOUT
-    //this.listeCellule.push(new CelluleComponent()); //RAJOUT
-    //this.listeCellule.push(new CelluleComponent()); //RAJOUT
     this.initSilo(10, 0);
   }
 
   ngOnInit(): void {
-    //this.initSilo(10, 0);
-    //console.log(this.listeCellule[0].temperature);
   }
 
   //Initialisation du silo
   public initSilo(_nbCellule : number, _idSilo : number) : void{
-    //var cellules : Array<CelluleComponent> = new Array<CelluleComponent>();
-    //this.listeCellule = new Array<CelluleComponent>();
-    //this.listeSonde = new Array<SondeComponent>();
-
     var i:number = _nbCellule * _idSilo;
 
     for(var _i = 0; _i < _nbCellule; _i++){
@@ -46,12 +36,11 @@ export class SiloComponent implements OnInit {
       i++;
     }
 
-    //this.setListeCellule(cellules);
-    //console.log("MEOWWW " + this.listeCellule[0].id);
     this.setNbCellule(_nbCellule);
     this.setSilo(_idSilo);
   }
 
+  //Renvoie une couleur en fonction de l'état du silo/des cellules
   public getColor() : String {
     var etatMax = 0;
     var couleur = "#39A842";
@@ -75,6 +64,7 @@ export class SiloComponent implements OnInit {
     return couleur;
   }
 
+  //Remet les cellules à 20 C°
   public Ventiler(){
     this.listeCellule.forEach(function (cellule){
       cellule.temperature = 20;
@@ -124,22 +114,27 @@ export class SiloComponent implements OnInit {
     return lotCereales;
   }
 
+  //Récupère les cellules
   public getCellules() : Array<CelluleComponent>{
     return this.listeCellule;
   }
 
+  //Affecte une liste de cellules
   public setListeCellule(_listeCellule:Array<CelluleComponent>) : void{
     this.listeCellule = _listeCellule;
   }
 
+  //Affecte un nb de cellules max
   public setNbCellule(_nbCellule : number) : void{
     this.nbCellule = _nbCellule;
   }
 
+  //Affecte un id de cellules
   public setSilo(_idSilo : number) : void{
     this.idSilo = _idSilo;
   }
 
+  //Renvoie vrai si il y a des insectes présents
   public presenceInsectes() : Boolean{
     var res : Boolean = false;
     this.listeCellule.forEach(function (cellule){
