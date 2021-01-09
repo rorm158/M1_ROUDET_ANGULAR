@@ -29,11 +29,13 @@ export class LotCerealesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //setter du numéro de lot
   setNumLot(num : number)
   {
     this.numLot = num.toString();
   }
 
+  //génère poids, tauxHumidite, analyse et qualité de manière aléatoire
   analyser()
   {
     if (!this.analyse)
@@ -45,6 +47,7 @@ export class LotCerealesComponent implements OnInit {
     }
   }
 
+  //nettoie le lot en améliorant le taux d'humidité et la qualité
   clean()
   {
     this.tauxHumidite = "15";
@@ -52,6 +55,7 @@ export class LotCerealesComponent implements OnInit {
     this.nettoye = true;
   }
 
+  //marque le lot comme étant ajouté
   add()
   {
     this.ajoute = true;

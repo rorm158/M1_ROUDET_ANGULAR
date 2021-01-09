@@ -18,35 +18,35 @@ export class LotViewComponent implements OnInit {
     this.camions = this.lotService.camions;
   }
 
-  refresh()
-  {
-    this.lots = this.lotService.lots;
-  }
-
   ngOnInit(): void {
   }
 
+  //rendre disponible un camion
   rendreDispo()
   {
     this.lotService.rendreDispo();
   }
 
+  //rendre non disponible un camion
   rendreNonDispo()
   {
     this.lotService.rendreNonDispo();
   }
 
+  //indique si un camion est dispo ou non
   camionDispo()
   {
     return this.lotService.camionDispo();
   }
 
+  //ramène un lot par un camion
   ramenerLot()
   {
     this.lotService.ramenerLot();
     this.rendreNonDispo();
   }
 
+  //rajoute un lot dans le silo
   add(i:number)
   {
     let ajoute : boolean = AppComponent.app.ajouterCereales(this.lots[i]);
@@ -55,10 +55,5 @@ export class LotViewComponent implements OnInit {
       this.lotService.add(i);
       this.lots[i].add();
     }
-  }
-
-  check()
-  {
-    console.log(this.lots);
   }
 }

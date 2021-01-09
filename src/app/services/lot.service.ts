@@ -20,6 +20,7 @@ export class LotService
         setTimeout(() => {this.VentilationAuto()}, 1000);   //Ventilation automatique (toutes les 1 seconde)
     }
 
+    //indique si un camion est disponible ou non
     camionDispo()
     {
         let dispo = false;
@@ -32,6 +33,7 @@ export class LotService
         return dispo;
     }
 
+    //rendre disponible le camion
     rendreDispo()
     {
         this.camions.forEach(function(camion) {
@@ -39,6 +41,7 @@ export class LotService
         });
     }
 
+    //rendre le camion non disponible
     rendreNonDispo()
     {
         this.camions.forEach(function(camion) {
@@ -46,6 +49,7 @@ export class LotService
         });
     }
 
+    //ramène un lot par un camion
     ramenerLot()
     {
         this.lots.push(new LotCerealesComponent());
@@ -56,28 +60,11 @@ export class LotService
         });
     }
 
+    //ajoute un lot de céréales dans lotRecup
     add(i:number)
     {
         this.lotRecup.push(this.lots[i]);
-        /*let tamp = this.lots[i];
-        this.lots.splice(i,1);
-        this.lotRecup.push(tamp);*/
     }
-
-    /*clean(i : number)
-    {
-        this.lots[i].clean(); 
-    }*/
-
-    //Met à jour les lots contenus dans le stockage (Obsolète)
-    /*public ActualiserLots(lotCereales : Array<LotCerealesComponent>) : void {
-        for(var i = 0; i < lotCereales.length; i++){
-            if(lotCereales[i]){
-                this.silo.listeCellule[i].setLotCereale(lotCereales[i]);
-                console.log(this.silo.listeCellule[i]);
-            }
-        }
-    }*/
 
     //Ventile toutes les cellules (fonction se rappelant toutes le 1s)
     VentilationAuto(){

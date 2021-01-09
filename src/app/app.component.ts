@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
   camions : any[];
   cellules : any[];
   static app;
-  
-  //index : number;
 
   constructor (private lotService : LotService, private stockageService : StockageService)
   {
@@ -40,39 +38,7 @@ export class AppComponent implements OnInit {
     console.log(this.lots);
   }
 
-  /*maj() : void
-  {
-    console.log("maj");
-    this.lotService.ActualiserLots(this.lots);
-  }*/
-
   ajouterCereales(lot:LotCerealesComponent) : Boolean {
     return this.lotService.ajouterLotCereales(lot);
   }
-
-  /*rendreDispo()
-  {
-    this.lotService.rendreDispo();
-  }
-
-  rendreNonDispo()
-  {
-    this.lotService.rendreNonDispo();
-  }
-
-  camionDispo()
-  {
-    return this.lotService.camionDispo();
-  }
-
-  ramenerLot()
-  {
-    this.lotService.ramenerLot();
-    this.rendreNonDispo();
-  }*/
-
-  /*cleani()
-  {
-    this.lotService.clean(this.index);
-  }*/
 }
